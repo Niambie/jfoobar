@@ -15,20 +15,21 @@ $plural = JRequest::getCmd('plural');
 if ($singular == '' || $plural == '') {
     echo JText::_('COM_JFOOBAR1');
     echo JText::_('COM_JFOOBAR2').'<br /><br />';
-    echo '<strong>'.JURI::base().JText::_('COM_JFOOBAR3').'</strong>'.'<br /><br />';
-    echo JText::_('COM_JFOOBAR4').'<br /><br />';
-    echo JText::_('COM_JFOOBAR5').'<br />';
-    echo JText::_('COM_JFOOBAR6');
-    echo JText::_('COM_JFOOBAR7');
+    echo JText::_('COM_JFOOBAR3').'<br /><br />';
+    echo '<strong>'.JURI::base().JText::_('COM_JFOOBAR4').'</strong>'.'<br /><br />';
+    echo JText::_('COM_JFOOBAR5').'<br /><br />';
+    echo JText::_('COM_JFOOBAR6').'<br /><br />';
+    echo JText::_('COM_JFOOBAR7').'<br /><br />';
+    echo JText::_('COM_JFOOBAR8');
     return;
 }
-JRequest::setVar('singular', $singular);
-JRequest::setVar('plural', $plural);
-JRequest::setVar('source', 'jfoobars');
 
 /** 3. copy, rename, replace literals and install */
 DEFINE('MOLAJO', 1);
 JRequest::SetVar('createtype', 'component');
+JRequest::setVar('singular', $singular);
+JRequest::setVar('plural', $plural);
+JRequest::setVar('source', 'jfoobars');
 include_once dirname(__FILE__).'/media/create.php';
 
 $create = new InstallerModelCreate();
@@ -36,5 +37,5 @@ $results = $create->create();
 
 /** 4. redirect to new component */
 $controller	= JController::getInstance('jfoobar');
-$controller->setRedirect(JRoute::_('index.php?option='.$plural, false));
+$controller->setRedirect(JRoute::_('index.php?option=com_categories&extension=com_'.$plural, false));
 $controller->redirect();

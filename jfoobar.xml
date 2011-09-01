@@ -13,6 +13,7 @@
 		<menu>COM_JFOOBAR</menu>
 		<files folder="administrator">
 			<filename>jfoobar.php</filename>
+			<filename>controller</filename>
 			<folder>media</folder>
 			<folder>language</folder>
 		</files>

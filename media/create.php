@@ -6,7 +6,7 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 defined('MOLAJO') or die;
-require_once JPATH_ADMINISTRATOR.'/components/com_jfoobarer/models/discover.php';
+require_once JPATH_ADMINISTRATOR.'/components/com_installer/models/discover.php';
 include_once dirname(__FILE__) . '/file.php';
 jimport('joomla.client.helper');
 jimport('joomla.application.component.model');
@@ -20,7 +20,7 @@ jimport('joomla.client.helper');
  * Extension Manager Create Model
  *
  * @package	Molajo
- * @subpackage	com_jfoobarer
+ * @subpackage	com_jfoobar
  * @since	1.6
  */
 class InstallerModelCreate extends JModel
@@ -30,7 +30,7 @@ class InstallerModelCreate extends JModel
      *
      * @var		string
      */
-    protected $_context = 'com_jfoobarer.create';
+    protected $_context = 'com_jfoobar.create';
 
     /**
      * populateState
@@ -44,11 +44,11 @@ class InstallerModelCreate extends JModel
     protected function populateState()
     {
          /** messages **/
-        $this->setState('message', JFactory::getApplication()->getUserState('com_jfoobarer.message'));
-        $this->setState('extension_message', JFactory::getApplication()->getUserState('com_jfoobarer.extension_message'));
+        $this->setState('message', JFactory::getApplication()->getUserState('com_jfoobar.message'));
+        $this->setState('extension_message', JFactory::getApplication()->getUserState('com_jfoobar.extension_message'));
 
-        JFactory::getApplication()->setUserState('com_jfoobarer.message','');
-        JFactory::getApplication()->setUserState('com_jfoobarer.extension_message','');
+        JFactory::getApplication()->setUserState('com_jfoobar.message','');
+        JFactory::getApplication()->setUserState('com_jfoobar.extension_message','');
 
         /** extension type **/
         $this->setState('create.createtype', JRequest::getWord('createtype', 'component'));
@@ -109,7 +109,7 @@ class InstallerModelCreate extends JModel
         /** file, class and method **/
         $classFolder = dirname(__FILE__).'/components/';
 
-        $filename = JFile::makeSafe(JRequest::getWord('source', 'jfoobar'));
+        $filename = JFile::makeSafe(JRequest::getWord('source', 'jfoobars'));
         $filename = JFilterOutput::stringURLSafe($filename);
         $extensionClassname = 'InstallerModelCreate'.ucfirst($filename);
         $filename = $filename.'.php';
@@ -155,20 +155,23 @@ class InstallerModelCreate extends JModel
         $results = $installer->purge();
         if ($results) {
         } else {
-            JFactory::getApplication()->setUserState('com_jfoobarer.message', JText::_('PLG_SYSTEM_CREATE_PURGE_DISCOVERY_FAILED'));
+            JFactory::getApplication()->setUserState('com_jfoobar.message', JText::_('PLG_SYSTEM_CREATE_PURGE_DISCOVERY_FAILED'));
             return false;
         }
 
         /** verify package retrieved (discover does not return a condition) **/
         $result = $installer->discover();
 
-        /** find extension_id for extension just created **/
-        $query = 'SELECT extension_id FROM #__extensions where state = -1  AND element = "'.strtoupper($extension).'"';
+        $db = $this->getDbo();
+		$query = $db->getQuery(true);
+		$query->select('extension_id');
+		$query->from('`#__extensions`');
+		$query->where('`state`= -1');
+		$query->where('`element`='.$db->quote($extension));
 
-        $dbo = JFactory::getDBO();
-        $dbo->setQuery($query);
+		$db->setQuery((string)$query);
+		$discoveredExtensionID = $db->loadResult();
 
-        $discoveredExtensionID = $dbo->loadResult();
         if ((int) $discoveredExtensionID > 0) {
         } else {
             JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_RETRIEVE_EXTENSION_ID_FAILED').': '. $discoveredExtensionID, 'error');
@@ -186,19 +189,20 @@ class InstallerModelCreate extends JModel
 
         $this->setState('action', 'remove');
         $this->setState('name', $installer->get('name'));
-        JFactory::getApplication()->setUserState('com_jfoobarer.message', $installer->message);
-        JFactory::getApplication()->setUserState('com_jfoobarer.extension_message', $installer->get('extension_message'));
+        JFactory::getApplication()->setUserState('com_jfoobar.message', $installer->message);
+        JFactory::getApplication()->setUserState('com_jfoobar.extension_message', $installer->get('extension_message'));
 
         /** double-check that the extension is no longer listed as not installed **/
         $query = 'SELECT extension_id FROM #__extensions where state = -1 AND extension_id = '. (int) $discoveredExtensionID;
         $dbo = JFactory::getDBO();
+        $query = $dbo->getQuery(true);
         $dbo->setQuery($query);
         $discoveredExtensionID = $dbo->loadResult();
         if ((int) $discoveredExtensionID > 0) {
-            JFactory::getApplication()->setUserState('com_jfoobarer.message', JText::_('PLG_SYSTEM_CREATE_INSTALL_EXTENSION_FAILED'));
+            JFactory::getApplication()->setUserState('com_jfoobar.message', JText::_('PLG_SYSTEM_CREATE_INSTALL_EXTENSION_FAILED'));
             return false;
         }
-echo '$discoveredExtensionID '.$discoveredExtensionID.'<br />';
+
         /** results **/
         JFactory::getApplication()->enqueueMessage(JText::sprintf('PLG_SYSTEM_CREATE_INSTALL_SUCCESS', JText::_('PLG_SYSTEM_CREATE_INSTALL_TYPE_'.strtoupper($this->getState('create.createtype')))));
         return true;

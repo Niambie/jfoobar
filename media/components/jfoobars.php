@@ -11,7 +11,7 @@ defined('MOLAJO') or die;
  * Extension Manager Create Model
  *
  * @package	Molajo
- * @subpackage	com_jfoobarer
+ * @subpackage	com_jfoobar
  * @since	1.6
  */
 class InstallerModelCreateJfoobars extends InstallerModelCreate
