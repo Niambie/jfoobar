@@ -12,8 +12,10 @@
 	<administration>
 		<menu>COM_JFOOBAR</menu>
 		<files folder="administrator">
+			<filename>README</filename>
+			<filename>index.html</filename>
 			<filename>jfoobar.php</filename>
-			<filename>controller</filename>
+			<filename>controller.php</filename>
 			<folder>media</folder>
 			<folder>language</folder>
 		</files>
