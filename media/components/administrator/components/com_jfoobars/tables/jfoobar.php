@@ -193,20 +193,21 @@ class JfoobarsTableJfoobar extends JTable
         // Build the WHERE clause for the primary keys.
         $where = $k.'='.implode(' OR '.$k.'=', $pks);
 
+        // Set the JDatabaseQuery object now to work with the below if clause
+        $query = $this->_db->getQuery(true);
+
         // Determine if there is checkin support for the table.
         if (!property_exists($this, 'checked_out') || !property_exists($this, 'checked_out_time')) {
-            $checkin = '';
+            // Do nothing
         } else {
-            $checkin = ' AND (checked_out = 0 OR checked_out = '.(int) $userId.')';
+            $query->where($this->_db->quoteName('checked_out').' = 0 OR '.$this->_db->quoteName('checked_out').' = '.(int) $userId.')');
         }
 
         // Update the publishing state for rows with the given primary keys.
-        $this->_db->setQuery(
-            'UPDATE '.$this->_db->quoteName($this->_tbl).
-            ' SET '.$this->_db->quoteName('state').' = '.(int) $state .
-            ' WHERE ('.$where.')' .
-            $checkin
-        );
+        $query->update($this->_db->quoteName($this->_tbl));
+        $query->set($this->_db->quoteName('state').' = '.(int) $state);
+        $query->where($where);
+        $this->_db->setQuery($query);
         $this->_db->query();
 
         // Check for a database error.

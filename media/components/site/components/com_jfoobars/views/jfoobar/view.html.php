@@ -43,7 +43,7 @@ class JfoobarsViewJfoobar extends JView
 
         $item->event = new stdClass();
         $dispatcher = JDispatcher::getInstance();
-        $item->snippet = JHtml::_('content.prepare', $item->snippet);
+        $item->snippet = $dispatcher->trigger('onContentPrepare', array ('com_jfoobars.jfoobar', $item, $item->params, 0));
 
         $results = $dispatcher->trigger('onContentAfterTitle', array('com_jfoobars.jfoobar', $item, $item->parameters, 0));
         $item->event->afterDisplayTitle = trim(implode("\n", $results));
