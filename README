@@ -1,10 +1,14 @@
+Translated at http://OpenTranslators.org ~*~ Consider getting involved!
+
+
 This README contains:
 
 I. Before you get started....
-II. Install com_foobars
-III. Customize com_foobars
+II. Install com_jfoobar
+III. Customize Your Component
 IV. Learning more about developing Joomla Components
  V. Fork it and make it better!
+VI. Translate with Open Translators
 
 
 
@@ -13,51 +17,26 @@ I. Before you get started....
 1.  Prepare your development environment.
 
 a. You’ll need an IDE, like Eclipse or phpStorm and a localhost environment. If you don't already have a localhost development environment, you could use the "Setting up your workstation for Joomla! development" article here: http://docs.joomla.org/Setting_up_your_workstation_for_Joomla!_development
+
 b. Install Joomla 1.7 on a localhost development site.
 
 2. Name your Component
 
 a. Select a name for your Component that is a noun with both a singular and plural form. For example, foobar and foobars or item and items.
+
 b. The Component name itself will be “com_” followed by the plural form.
 
 
 
 
-II. Install com_foobars
+II. Install com_jfoobar and Review the "out of the box" Component functionality.
 
 
-1. Copy com_foobars to your localhost environment where Joomla has been installed.
+1. Click the download button https://github.com/Niambie/jfoobar
 
-a. Copy github.com/niambie/administrator/components/com_foobars to your localhost/website/administrator/components folder
-b. Copy github.com/niambie/components/com_foobars to your localhost/website/components folder
-c. Copy github.com/niambie/media/com_foobars to your localhost/website/media folder
+2. Install like any other Joomla Extension
 
-2. Rename files and folders in each location.
-
-a. Rename all the 'foobar' and 'foobars' files and folders to the new plural name (ex. rename 'foobar' to item, and ‘foobars’ to 'items'). Be careful to retain the singular or plural form. Change both the folder and file names.
-b. Repeat for the administrator/components/com_foobars; components/com_foobars; and media/com_foobars.
-
-3. Change text literals:
-
-Using your IDE (or a Text search and replace tool), change the following literals (paying close attention to case sensitivity):
-
-a. Change 'FOOBAR' to 'ITEM'
-b. Change 'foobar' to 'item'
-c. Change 'Foobar' to 'Item'
-d. Change "Author Name" to your name.
-e. Change "AuthorName@gmail.com" to your email address
-f. Change "http://AllTogetherAsAWhole.org" to your web site
-
-4. Install your Component.
-
-a. Logon to the Administrator.
-b. Click the Menu Item 'Extensions-Extension Manager.'
-c. Click the 'Discover' submenu.
-d. Press the 'Purge Cache' button.
-e. Press the 'Discover' button.
-f. Select your Component name and press Install.
-
-5. Review the Component functionality.
+3. Review the "out of the box" Component functionality.
 
 a. Click the menu item 'Component-Your Component Name.' You will see the List View (sometimes called the Component Manager View), for your Component.
 
@@ -92,21 +71,16 @@ g. Review the Site.
 
 
 
-III. Customize com_foobars
+III. Customize Your Component
 
-1. Review your Component Table 'jos_foobars' and the 'attribs' column.
+1. Review your Component Table 'jos_foobars' and the 'custom_fields' and 'parameters' columns. Data customizations are stored in those two fields, you will not have to change your database table to customize your component.
 
-a. The easiest way to change the Component for your specific data needs is to leave the table exactly as it is and make your changes to the custom fields defined in the 'attribs' column.
+2. Change the 'custom_fields' column.
 
-b. Using PHPMyAdmin, look at your component table which is named jos_foobars (where 'jos' is the prefix for your database.) Select a row in your Component table and look the attribs column. You will see several different data elements stored within.
-
-
-2. Change the 'attribs' column.
-
-a. Open the administrator/components/com_foobars/models/forms/foobar.xml file using your IDE.
+a. Open the administrator/components/com_jfoobar/models/forms/foobar.xml file using your IDE.
 
 - The XML defines the data in your table to JForm, the Form API introduced in Joomla 1.6.
-- Find the literal: <fields name="attribs">. That is the location that you can remove and add columns, as needed.
+- Find the literal: <fields name="custom_fields">. That is the location that you can remove and add columns, as needed.
 - Here is an example of a field you will find:
 
 <field
@@ -125,8 +99,8 @@ c. Although it's more advanced, you can create new JForm Custom Fieldtypes if th
 
 3. Change Language Strings
 
-a. Language files for your Component are located at administrator/components/com_foobars/language/xx-XX/xx-XX.com_releases.ini
-https://github.com/Niambie/com_foobars/blob/master/administrator/components/com_foobars/language/en-GB/en-GB.com_foobars.ini
+a. Language files for your Component are located at administrator/components/com_jfoobar/language/xx-XX/xx-XX.com_releases.ini
+https://github.com/Niambie/com_jfoobar/blob/master/administrator/components/com_jfoobar/language/en-GB/en-GB.com_jfoobar.ini
 
 b. Note: the “sys” language file is used within the Administrator for Menu Items and other system displays.
 
@@ -154,40 +128,40 @@ a. The frontend View Layout are only a 'stub' to get you started. You will have 
 
 b. For the Administrator, there are two Views:
 
-- The List View is located at administrator/components/com_foobars/views/foobars/tmpl/default.php file.
-https://github.com/Niambie/com_foobars/blob/master/administrator/components/com_foobars/views/foobars/tmpl/default.php
+- The List View is located at administrator/components/com_jfoobar/views/foobars/tmpl/default.php file.
+https://github.com/Niambie/com_jfoobar/blob/master/administrator/components/com_jfoobar/views/foobars/tmpl/default.php
 
-- The Edit View located at administrator/components/com_foobars/views/foobar/tmpl/edit.php file.
-https://github.com/Niambie/com_foobars/blob/master/administrator/components/com_foobars/views/foobar/tmpl/edit.php
+- The Edit View located at administrator/components/com_jfoobar/views/foobar/tmpl/edit.php file.
+https://github.com/Niambie/com_jfoobar/blob/master/administrator/components/com_jfoobar/views/foobar/tmpl/edit.php
 
 c. For the Site, there are three Views in the Component:
 
-- The List View is located at components/com_foobars/views/foobars/tmpl/default.php file.
-https://github.com/Niambie/com_foobars/blob/master/components/com_foobars/views/foobars/tmpl/default.php
+- The List View is located at components/com_jfoobar/views/foobars/tmpl/default.php file.
+https://github.com/Niambie/com_jfoobar/blob/master/components/com_jfoobar/views/foobars/tmpl/default.php
 
-- The Item View located at components/com_foobars/views/foobar/tmpl/item.php file.
-https://github.com/Niambie/com_foobars/blob/master/components/com_foobars/views/foobar/tmpl/default.php
+- The Item View located at components/com_jfoobar/views/foobar/tmpl/item.php file.
+https://github.com/Niambie/com_jfoobar/blob/master/components/com_jfoobar/views/foobar/tmpl/default.php
 
-- The Form View located at components/com_foobars/views/form/tmpl/edit.php file.
-https://github.com/Niambie/com_foobars/blob/master/components/com_foobars/views/form/tmpl/edit.php
+- The Form View located at components/com_jfoobar/views/form/tmpl/edit.php file.
+https://github.com/Niambie/com_jfoobar/blob/master/components/com_jfoobar/views/form/tmpl/edit.php
 
 
 5. Change Administrator Component Title and Menu Item Icons and/or Modify CSS/JS
 
-a. Change the Images in the media/com_foobars/images folder.
+a. Change the Images in the media/com_jfoobar/images folder.
 
-b. Update the CSS in the media/com_foobars/css/administrator.css file
+b. Update the CSS in the media/com_jfoobar/css/administrator.css file
 
 c. The administrator.css is loaded in the Administrator List and Edit Views:
-- administrator/components/com_foobars/views/foobars/tmpl/default.php file.
-- administrator/components/com_foobars/views/foobar/tmpl/edit.php file.
+- administrator/components/com_jfoobar/views/foobars/tmpl/default.php file.
+- administrator/components/com_jfoobar/views/foobar/tmpl/edit.php file.
 
 More from the Wiki (although it's a bit dated) http://docs.joomla.org/How_to_create_a_custom_button
 
 
 IV. Learning more about developing Joomla Components
 
-There is so much more that you can do, including adding and removing Views and Layouts. com_foobars is a good 'getting started' approach to learning how to create your own Components.
+There is so much more that you can do, including adding and removing Views and Layouts. com_jfoobar is a good 'getting started' approach to learning how to create your own Components.
 
 There is a wealth of great information on the Joomla Wiki. Here are some links to get started:
 
@@ -199,8 +173,14 @@ Component Updates http://docs.joomla.org/Managing_Component_Updates_with_Joomla!
 
 V. Fork it and make it better!
 
-a. Report issues here => https://github.com/Niambie/com_foobars/issues
+a. Report issues here => https://github.com/Niambie/com_jfoobar/issues
 
 b. Fork it and issue a pull request. Pass on your improvements to others. :)
 
 c. Have fun!
+
+
+VI. Translate with Open Translators
+
+http://OpenTranslators.org is a fabulous group of Joomla Translators who translate Joomla extensions. They welcome your involvement!
+If you want to translate jFoobar into your language and share your translations with others, then THANKS! and please contact the http://OpenTranslators.org team to see how to get involved.
