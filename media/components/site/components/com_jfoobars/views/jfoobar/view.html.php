@@ -41,9 +41,12 @@ class JfoobarsViewJfoobar extends JView
         $item->slug = $item->alias ? $item->alias : $item->id;
         $item->parent_slug = $item->category_alias ? $item->category_alias : $item->catid;
 
+        // Process content plugins
+        JPluginHelper::importPlugin('content');
+        $results = $dispatcher->trigger('onContentPrepare', array ('com_jfoobars.jfoobar', &$item, &$item->parameters, 0));
+
         $item->event = new stdClass();
         $dispatcher = JDispatcher::getInstance();
-        $item->snippet = $dispatcher->trigger('onContentPrepare', array ('com_jfoobars.jfoobar', $item, $item->params, 0));
 
         $results = $dispatcher->trigger('onContentAfterTitle', array('com_jfoobars.jfoobar', $item, $item->parameters, 0));
         $item->event->afterDisplayTitle = trim(implode("\n", $results));
