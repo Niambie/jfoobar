@@ -53,11 +53,11 @@ class JFormFieldModal_Jfoobar extends JFormField
 		$link	= 'index.php?option=com_jfoobars&amp;view=jfoobars&amp;layout=modal&amp;tmpl=component&amp;function=jSelectJfoobar_'.$this->id;
 
 		$db	= JFactory::getDBO();
-		$db->setQuery(
-			'SELECT title' .
-			' FROM #__jfoobars' .
-			' WHERE id = '.(int) $this->value
-		);
+		$query = $db->getQuery(true);
+		$query->select($db->quoteName('title'));
+		$query->from($db->quoteName('#__jfoobars'));
+		$query->where($db->quoteName('id').' = '.(int) $this->value);
+		$db->setQuery($query);
 		$title = $db->loadResult();
 
 		if ($error = $db->getErrorMsg()) {
