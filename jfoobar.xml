@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.7.0" method="upgrade">
+	<name>COM_JFOOBAR</name>
+	<creationDate>September 2011</creationDate>
+	<copyright>Copyright (C) 2011 Amy Stephen. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Amy Stephen</author>
+	<authorEmail>contribute@molajo.org</authorEmail>
+	<authorUrl>http://Molajo.org</authorUrl>
+	<version>1.0.0</version>
+	<description>COM_JFOOBAR_DESCRIPTION</description>
+	<administration>
+		<menu>COM_JFOOBAR</menu>
+		<files folder="administrator">
+			<filename>jfoobar.php</filename>
+			<folder>media</folder>
+			<folder>language</folder>
+		</files>
+	</administration>
+</extension>
+
