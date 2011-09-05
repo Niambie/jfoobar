@@ -33,8 +33,10 @@
 	</files>
 
 	<languages folder="site">
-		<language tag="en-GB">language/en-GB.com_jfoobars.ini</language>
-		<language tag="en-GB">language/en-GB.com_jfoobars.sys.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.com_jfoobars.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.com_jfoobars.sys.ini</language>
+		<language tag="sv-SE">language/sv-SE/sv-SE.com_jfoobars.ini</language>
+		<language tag="sv-SE">language/sv-SE/sv-SE.com_jfoobars.sys.ini</language>
 	</languages>
 
 	<media destination="com_jfoobars" folder="media">
@@ -60,8 +62,10 @@
 			<folder>views</folder>
 		</files>
 		<languages folder="administrator">
-			<language tag="en-GB">language/en-GB.com_jfoobars.ini</language>
-			<language tag="en-GB">language/en-GB.com_jfoobars.sys.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_jfoobars.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_jfoobars.sys.ini</language>
+			<language tag="sv-SE">language/sv-SE/sv-SE.com_jfoobars.ini</language>
+			<language tag="sv-SE">language/sv-SE/sv-SE.com_jfoobars.sys.ini</language>
 		</languages>
 	</administration>
 
