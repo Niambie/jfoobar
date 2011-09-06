@@ -4,23 +4,28 @@ Translated at http://OpenTranslators.org ~*~ Consider getting involved!
 This README contains:
 
 I. Before you get started....
+
 II. Install com_jfoobar
+
 III. Customize Your Component
+
 IV. Learning more about developing Joomla Components
+
 V. Fork it and make it better!
+
 VI. Translate with Open Translators
 
 
 
-# I. Before you get started....
+## I. Before you get started....
 
-## 1.  Prepare your development environment.
+### 1.  Prepare your development environment.
 
 a. You’ll need an IDE, like Eclipse or phpStorm and a localhost environment. If you don't already have a localhost development environment, you could use the "Setting up your workstation for Joomla! development" article here: http://docs.joomla.org/Setting_up_your_workstation_for_Joomla!_development
 
 b. Install Joomla 1.7 on a localhost development site.
 
-## 2. Name your Component
+### 2. Name your Component
 
 a. Select a name for your Component that is a noun with both a singular and plural form. For example, foobar and foobars or item and items.
 
@@ -28,14 +33,14 @@ b. The Component name itself will be “com_” followed by the plural form.
 
 
 
-# II. Install com_jfoobar and Review the "out of the box" Component functionality.
+## II. Install com_jfoobar and Review the "out of the box" Component functionality.
 
 
-## 1. Click the download button https://github.com/Niambie/jfoobar
+### 1. Click the download button https://github.com/Niambie/jfoobar
 
-## 2. Install like any other Joomla Extension
+### 2. Install like any other Joomla Extension
 
-## 3. Review the "out of the box" Component functionality.
+### 3. Review the "out of the box" Component functionality.
 
 a. Click the menu item 'Component-Your Component Name.' You will see the List View (sometimes called the Component Manager View), for your Component.
 
@@ -68,11 +73,11 @@ g. Review the Site.
     - A basic “stub” is in place for your Component and three working Views that you can customize the Layouts, as needed.
 
 
-# III. Customize Your Component
+## III. Customize Your Component
 
-## 1. Review your Component Table 'jos_foobars' and the 'custom_fields' and 'parameters' columns. Data customizations are stored in those two fields, you will not have to change your database table to customize your component.
+### 1. Review your Component Table 'jos_foobars' and the 'custom_fields' and 'parameters' columns. Data customizations are stored in those two fields, you will not have to change your database table to customize your component.
 
-## 2. Change the 'custom_fields' column.
+### 2. Change the 'custom_fields' column.
 
 a. Open the administrator/components/com_jfoobar/models/forms/foobar.xml file using your IDE.
 
@@ -94,7 +99,7 @@ b. Create fields using JForm Fieldtypes. The list of fieldtypes in core is avail
 c. Although it's more advanced, you can create new JForm Custom Fieldtypes if the list above does not contain what you need. To learn to do so, see: http://docs.joomla.org/Creating_a_custom_form_field_type
 
 
-## 3. Change Language Strings
+### 3. Change Language Strings
 
 a. Language files for your Component are located at administrator/components/com_jfoobar/language/xx-XX/xx-XX.com_releases.ini
 https://github.com/Niambie/com_jfoobar/blob/master/administrator/components/com_jfoobar/language/en-GB/en-GB.com_jfoobar.ini
@@ -119,7 +124,7 @@ c. If you want to change the values that appear as the labels and descriptions o
 d. Search for the label and description values in the Language files and make the changes desired.
 
 
-## 4. Change the View Layouts
+### 4. Change the View Layouts
 
 a. The frontend View Layout are only a 'stub' to get you started. You will have to customize the Layouts, as needed.
 
@@ -143,7 +148,7 @@ https://github.com/Niambie/com_jfoobar/blob/master/components/com_jfoobar/views/
 https://github.com/Niambie/com_jfoobar/blob/master/components/com_jfoobar/views/form/tmpl/edit.php
 
 
-## 5. Change Administrator Component Title and Menu Item Icons and/or Modify CSS/JS
+### 5. Change Administrator Component Title and Menu Item Icons and/or Modify CSS/JS
 
 a. Change the Images in the media/com_jfoobar/images folder.
 
@@ -156,7 +161,7 @@ c. The administrator.css is loaded in the Administrator List and Edit Views:
 More from the Wiki (although it's a bit dated) http://docs.joomla.org/How_to_create_a_custom_button
 
 
-# IV. Learning more about developing Joomla Components
+## IV. Learning more about developing Joomla Components
 
 There is so much more that you can do, including adding and removing Views and Layouts. com_jfoobar is a good 'getting started' approach to learning how to create your own Components.
 
@@ -168,7 +173,7 @@ Component Updates http://docs.joomla.org/Managing_Component_Updates_with_Joomla!
 
 
 
-# V. Fork it and make it better!
+## V. Fork it and make it better!
 
 a. Report issues here => https://github.com/Niambie/com_jfoobar/issues
 
@@ -177,7 +182,7 @@ b. Fork it and issue a pull request. Pass on your improvements to others. :)
 c. Have fun!
 
 
-# VI. Translate with Open Translators
+## VI. Translate with Open Translators
 
 http://OpenTranslators.org is a fabulous group of Joomla Translators who translate Joomla extensions. They welcome your involvement!
 If you want to translate jFoobar into your language and share your translations with others, then THANKS! and please contact the http://OpenTranslators.org team to see how to get involved.
