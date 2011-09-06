@@ -17,7 +17,7 @@ This README contains:
 
 ***
 
-[I] ## I. Before you get started....
+[I]: ## I. Before you get started....
 
 ### 1.  Prepare your development environment.
 
@@ -32,7 +32,7 @@ This README contains:
 **b**. The Component name itself will be “com_” followed by the plural form.
 
 
-[II] ## II. Install com_jfoobar and Review the "out of the box" Component functionality.
+[II]: ## II. Install com_jfoobar and Review the "out of the box" Component functionality.
 
 ### 1. Click the download button https://github.com/Niambie/jfoobar
 
@@ -71,7 +71,7 @@ This README contains:
     - A basic “stub” is in place for your Component and three working Views that you can customize the Layouts, as needed.
 
 
-[III] ## III. Customize Your Component
+[III]: ## III. Customize Your Component
 
 ### 1. Review your Component Table 'jos_foobars' and the 'custom_fields' and 'parameters' columns. Data customizations are stored in those two fields, you will not have to change your database table to customize your component.
 
@@ -159,7 +159,7 @@ https://github.com/Niambie/com_jfoobar/blob/master/components/com_jfoobar/views/
 More from the Wiki (although it's a bit dated) http://docs.joomla.org/How_to_create_a_custom_button
 
 
-[IV] ## IV. Learning more about developing Joomla Components
+[IV]: ## IV. Learning more about developing Joomla Components
 
 There is so much more that you can do, including adding and removing Views and Layouts. com_jfoobar is a good 'getting started' approach to learning how to create your own Components.
 
@@ -171,7 +171,7 @@ Component Updates http://docs.joomla.org/Managing_Component_Updates_with_Joomla!
 
 
 
-[V] ## V. Fork it and make it better!
+[V]: ## V. Fork it and make it better!
 
 **a**. Report issues here => https://github.com/Niambie/com_jfoobar/issues
 
@@ -180,7 +180,7 @@ Component Updates http://docs.joomla.org/Managing_Component_Updates_with_Joomla!
 **c**. Have fun!
 
 
-[VI] ## VI. Translate with Open Translators
+[VI]: ## VI. Translate with Open Translators
 
 http://OpenTranslators.org is a fabulous group of Joomla Translators who translate Joomla extensions. They welcome your involvement!
 If you want to translate jFoobar into your language and share your translations with others, then THANKS! and please contact the http://OpenTranslators.org team to see how to get involved.
