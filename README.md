@@ -72,7 +72,9 @@ This README contains:
 
 ## III. Customize Your Component
 
-### 1. Review your Component Table 'jos_foobars' and the 'custom_fields' and 'parameters' columns. Data customizations are stored in those two fields, you will not have to change your database table to customize your component.
+### 1. Review your Component Table 'jos_foobars' and the 'custom_fields' and 'parameters' columns. 
+
+Data customizations are stored in those two fields, you will not have to change your database table to customize your component.
 
 ### 2. Change the 'custom_fields' column.
 
