@@ -51,14 +51,14 @@ class InstallerModelCreate extends JModel
         JFactory::getApplication()->setUserState('com_jfoobar.extension_message','');
 
         /** extension type **/
-        $this->setState('create.createtype', JRequest::getWord('createtype', 'component'));
+        $this->setState('create.createtype', JRequest::getCmd('createtype', 'component'));
 
         /** module **/
-        $this->setState('create.module_name', JRequest::getWord('module_name', ''));
+        $this->setState('create.module_name', JRequest::getCmd('module_name', ''));
 
         /** plugin **/
-        $this->setState('create.plugin_name', JRequest::getWord('plugin_name', ''));
-        $this->setState('create.plugin_type', JRequest::getWord('plugin_type', 'content'));
+        $this->setState('create.plugin_name', JRequest::getCmd('plugin_name', ''));
+        $this->setState('create.plugin_type', JRequest::getCmd('plugin_type', 'content'));
 
         parent::populateState();
     }
@@ -109,7 +109,7 @@ class InstallerModelCreate extends JModel
         /** file, class and method **/
         $classFolder = dirname(__FILE__).'/components/';
 
-        $filename = JFile::makeSafe(JRequest::getWord('source', 'jfoobars'));
+        $filename = JFile::makeSafe(JRequest::getCmd('source', 'jfoobars'));
         $filename = JFilterOutput::stringURLSafe($filename);
         $extensionClassname = 'InstallerModelCreate'.ucfirst($filename);
         $filename = $filename.'.php';

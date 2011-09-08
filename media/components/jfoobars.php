@@ -82,7 +82,7 @@ class InstallerModelCreateJfoobars extends InstallerModelCreate
     protected function _edit ()
     {
         /** single - must have valid file name **/
-        $this->_single = JRequest::getWord('singular', 'item');
+        $this->_single = JRequest::getCmd('singular', 'item');
         $this->_single = JFile::makeSafe($this->_single);
         $this->_single = JFilterOutput::stringURLSafe($this->_single);
         if ($this->_single == '' || $this->_single == 'item') {
@@ -91,7 +91,7 @@ class InstallerModelCreateJfoobars extends InstallerModelCreate
         }
 
         /** plural - must have valid file name **/
-        $this->_plural = JRequest::getWord('plural', 'items');
+        $this->_plural = JRequest::getCmd('plural', 'items');
         $this->_plural = JFile::makeSafe($this->_plural);
         $this->_plural = JFilterOutput::stringURLSafe($this->_plural);
         if ($this->_plural == '' || $this->_plural == 'items') {
