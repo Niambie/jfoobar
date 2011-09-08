@@ -1,6 +1,6 @@
 [main]
 host = https://www.transifex.net
-lang_map = en: en-GB, sv_SE: sv-SE
+lang_map = en: en-GB, sv_SE: sv-SE, da_DK: da-DK, es_ES: es-ES, pt_BR: pt-BR
 
 [jfoobar.admin-system]
 file_filter = media/components/administrator/components/com_jfoobars/language/<lang>/<lang>.com_jfoobars.ini
