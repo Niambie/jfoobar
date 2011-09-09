@@ -90,6 +90,12 @@ class InstallerModelCreate extends JModel
         } else if ($this->getState('create.createtype') == 'plugin') {
             return $this->_createPlugin();
 
+        } else if ($this->getState('create.createtype') == 'layout') {
+            return $this->_createLayout();
+
+        } else if ($this->getState('create.createtype') == 'template') {
+            return $this->_createTemplate();
+
         } else {
             JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_INVALID_EXTENSION_TYPE_FAILED').': '. $this->getState('create.createtype'), 'error');
             return false;
@@ -118,7 +124,7 @@ class InstallerModelCreate extends JModel
         $filehelper = new MolajoFileHelper();
         $results = $filehelper->requireClassFile ($classFolder.$filename, $extensionClassname);
         if ($results === false) {
-           JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_CREATE_EXTENSION_FAILED').': '. $extensionClassname, 'error');
+           JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_INSTALL_EXTENSION_FAILED').': '. $extensionClassname, 'error');
             return false;
         }
 
@@ -144,6 +150,8 @@ class InstallerModelCreate extends JModel
     protected function _createModule() {}
 
     protected function _createPlugin() {}
+
+    protected function _createLayout() {}
 
     protected function _createTemplate() {}
 

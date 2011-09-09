@@ -58,14 +58,14 @@ class InstallerModelCreateJfoobars extends InstallerModelCreate
         /** edit **/
         $results = $this->_edit ();
         if ($results == false) {
-            $this->_app->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_COMPONENT_FAILED'), 'error');
+            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_EXTENSION_FAILED'), 'error');
             return false;
         }
 
         /** copy **/
         $results = $this->_copy ();
         if ($results === false) {
-            $this->_app->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_COMPONENT_FAILED'), 'error');
+            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_EXTENSION_FAILED'), 'error');
             return false;
         }
 
@@ -86,7 +86,7 @@ class InstallerModelCreateJfoobars extends InstallerModelCreate
         $this->_single = JFile::makeSafe($this->_single);
         $this->_single = JFilterOutput::stringURLSafe($this->_single);
         if ($this->_single == '' || $this->_single == 'item') {
-            $this->_app->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_SINGULAR_ITEM_VALUE_INVALID').': '. $this->_single, 'error');
+            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_SINGULAR_ITEM_VALUE_INVALID').': '. $this->_single, 'error');
             return false;
         }
 
@@ -95,27 +95,27 @@ class InstallerModelCreateJfoobars extends InstallerModelCreate
         $this->_plural = JFile::makeSafe($this->_plural);
         $this->_plural = JFilterOutput::stringURLSafe($this->_plural);
         if ($this->_plural == '' || $this->_plural == 'items') {
-            $this->_app->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_PLURAL_ITEM_VALUE_INVALID').': '. $this->_plural, 'error');
+            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_PLURAL_ITEM_VALUE_INVALID').': '. $this->_plural, 'error');
             return false;
         }
 
         /** single and plural must not match **/
         if ($this->_plural == $this->_single) {
-            $this->_app->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_SINGULAR_AND_PLURAL_CANNOT_MATCH').': '. $this->_plural, 'error');
+            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_SINGULAR_AND_PLURAL_CANNOT_MATCH').': '. $this->_plural, 'error');
             return false;
         }
 
         /** does the destination exist? **/
         if (JFolder::exists(JPATH_ADMINISTRATOR.'/components/'.'com_'.$this->_plural)) {
-            $this->_app->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_EXTENSION_ADMIN_DESTINATION_FOLDER_ALREADY_EXISTS').' '.$destination, 'error');
+            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_EXTENSION_ADMIN_DESTINATION_FOLDER_ALREADY_EXISTS').' '.(JPATH_ADMINISTRATOR.'/components/'.'com_'.$this->_plural), 'error');
             return false;
         }
         if (JFolder::exists(JPATH_SITE.'/components/'.'com_'.$this->_plural)) {
-            $this->_app->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_EXTENSION_SITE_DESTINATION_FOLDER_ALREADY_EXISTS').' '.$destination, 'error');
+            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_EXTENSION_SITE_DESTINATION_FOLDER_ALREADY_EXISTS').' '.(JFolder::exists(JPATH_SITE.'/components/'.'com_'.$this->_plural)), 'error');
             return false;
         }
         if (JFolder::exists(JPATH_SITE.'/media/'.'com_'.$this->_plural)) {
-            $this->_app->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_EXTENSION_MEDIA_DESTINATION_FOLDER_ALREADY_EXISTS').' '.$destination, 'error');
+            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_EXTENSION_MEDIA_DESTINATION_FOLDER_ALREADY_EXISTS').' '.(JFolder::exists(JPATH_SITE.'/media/'.'com_'.$this->_plural)), 'error');
             return false;
         }
 
@@ -126,7 +126,7 @@ class InstallerModelCreateJfoobars extends InstallerModelCreate
 
         $discoveredExtensionID = $db->loadResult();
         if (count ($discoveredExtensionID) > 0) {
-            $this->_app->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_EXTENSION_ALREADY_INSTALLED').': '. $discoveredExtensionID, 'error');
+            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_EXTENSION_FAILED').': '. $discoveredExtensionID, 'error');
             return false;
         }
 
@@ -155,7 +155,7 @@ class InstallerModelCreateJfoobars extends InstallerModelCreate
         $destination = JPATH_ADMINISTRATOR.'/components/'.'com_'.$this->_plural;
         $results = $this->_copySource ($source, $destination);
         if ($results === false) {
-            $this->_app->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_COPY_FOLDER_FAILED').$source, 'error');
+            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_COPY_ADMIN_FOLDER_FAILED').$source, 'error');
             return false;
         }
 
@@ -166,7 +166,7 @@ class InstallerModelCreateJfoobars extends InstallerModelCreate
         $destination = JPATH_SITE.'/media/'.'com_'.$this->_plural;
         $results = $this->_copySource ($source, $destination);
         if ($results === false) {
-            $this->_app->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_COPY_FOLDER_FAILED').$source, 'error');
+            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_COPY_MEDIA_FOLDER_FAILED').$source, 'error');
             return false;
         }
 
@@ -177,7 +177,7 @@ class InstallerModelCreateJfoobars extends InstallerModelCreate
         $destination = JPATH_SITE.'/components/'.'com_'.$this->_plural;
         $results = $this->_copySource ($source, $destination);
         if ($results === false) {
-            $this->_app->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_COPY_FOLDER_FAILED').$source, 'error');
+            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_COPY_SITE_FOLDER_FAILED').$source, 'error');
             return false;
         }
 
