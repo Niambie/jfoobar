@@ -1,6 +1,6 @@
 Translated at http://OpenTranslators.org ~*~ Consider getting involved!
 
-WARNING: Use the ZIP file. Joomla does not copy the language files using the tar.gz file.
+WARNING: The zip file works perfectly. If you use the tar.gz file, unzip it into the tmp folder and use the "Install from Folder" Installation option.
 
 This README contains:
 
@@ -229,6 +229,11 @@ When you are done, your folder structure will look like this:
 
 **4**. Zip the folder and install it like any other Joomla Component.
 
+**5**. Using Phing for Packages
+
+Andew Eddie maintains a good Phing Example for packaging your Component. This is especially helpful if you have multiple Extensions. Thanks for sharing this information, Andrew.
+
+https://github.com/eddieajau/artof-google-mini/blob/master/build/build.xml
 
 ## IV. Learn more about developing Joomla Components
 
