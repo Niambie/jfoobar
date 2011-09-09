@@ -170,11 +170,11 @@ Create an Installable File so that you can share your Component with others is s
 
 ### 2. Create the following Subfolders in the folder:
 
-#### a. administrator
-#### b. site
-#### c. media
+a. administrator
+b. site
+c. media
 
-### 3. Copy (or move) the following files into the following subfolders:
+### 3. Copy the following files into the following subfolders:
 
 Note: Do not copy the folder -- copy the files and folders inside of the named folder.
 
@@ -184,9 +184,9 @@ Copy the files in the components/com_componentname folder into the site subfolde
 
 Copy the files in the media/com_componentname files into the media subfolder.
 
-### 4. Create the install xml file.
+### 4. Move the componentname.xml file to the root folder.
 
-Move the administrator/componentname.xml file into the root (on the same level as the three subfolders.)
+Move the administrator/componentname.xml file into the root (the same level as the three subfolders.)
 
 ### 5. Zip the folder and install it like any other Joomla Component.
 
