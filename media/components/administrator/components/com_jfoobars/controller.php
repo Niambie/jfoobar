@@ -22,7 +22,6 @@ class JfoobarsController extends JController
 	{
 		require_once JPATH_COMPONENT.'/helpers/jfoobars.php';
 
-		// Load the submenu.
 		JfoobarsHelper::addSubmenu(JRequest::getCmd('view', 'jfoobars'));
 
 		$view		= JRequest::getCmd('view', 'jfoobars');
