@@ -127,26 +127,21 @@ https://github.com/Niambie/com_jfoobar/blob/master/administrator/components/com_
 
 ### 4. Change the View Layouts
 
-**a**. The frontend View Layout are only a 'stub' to get you started. You will have to customize the Layouts, as needed.
+**a**. The frontend View Layout are only a 'stub' to get you started. You will have to customize the Layouts, as needed. Read the hints for how to use your layout in the layout files. You can add views and/or layouts, as needed. Explore the learning material on the Joomla Wiki (and listed below) for more information.
 
 **b**. For the Administrator, there are two Views:
 
 - The List View is located at administrator/components/com_jfoobar/views/foobars/tmpl/default.php file.
-https://github.com/Niambie/com_jfoobar/blob/master/administrator/components/com_jfoobar/views/foobars/tmpl/default.php
 
 - The Edit View located at administrator/components/com_jfoobar/views/foobar/tmpl/edit.php file.
-https://github.com/Niambie/com_jfoobar/blob/master/administrator/components/com_jfoobar/views/foobar/tmpl/edit.php
 
 **c**. For the Site, there are three Views in the Component:
 
--  The List View is located at components/com_jfoobar/views/foobars/tmpl/default.php file.
-https://github.com/Niambie/com_jfoobar/blob/master/components/com_jfoobar/views/foobars/tmpl/default.php
+- The List View is located at components/com_jfoobar/views/foobars/tmpl/default.php file.
 
 - The Item View located at components/com_jfoobar/views/foobar/tmpl/item.php file.
-https://github.com/Niambie/com_jfoobar/blob/master/components/com_jfoobar/views/foobar/tmpl/default.php
 
 - The Form View located at components/com_jfoobar/views/form/tmpl/edit.php file.
-https://github.com/Niambie/com_jfoobar/blob/master/components/com_jfoobar/views/form/tmpl/edit.php
 
 
 ### 5. Change Administrator Component Title and Menu Item Icons and/or Modify CSS/JS
@@ -171,18 +166,57 @@ Create an Installable File so that you can share your Component with others is s
 ### 2. Create the following Subfolders in the folder:
 
 a. administrator
+
 b. site
+
 c. media
 
 ### 3. Copy the following files into the following subfolders:
-
-Note: Do not copy the folder -- copy the files and folders inside of the named folder.
 
 Copy the files in the administrator/components/com_componentname folder into the administrator subfolder.
 
 Copy the files in the components/com_componentname folder into the site subfolder.
 
 Copy the files in the media/com_componentname files into the media subfolder.
+
+Note: Do not copy the component folder name, itself, just copy the files and folders inside of the named folder.
+
+When you are done, your folder structure will look like this:
+
+####administrator
+
+#####controllers
+#####helpers
+#####language
+#####models
+#####sql
+#####tables
+#####views
+#####access.xml
+#####config.xml
+#####controller.php
+#####index.html
+#####jfoobars.php
+#####jfoobars.xml
+
+####media
+
+#####css
+#####images
+#####js
+#####index.html
+
+####site
+
+#####controllers
+#####helpers
+#####language
+#####models
+#####views
+#####controller.php
+#####index.html
+#####jfoobars.php
+#####router.php
 
 ### 4. Move the componentname.xml file to the root folder.
 
