@@ -260,17 +260,23 @@ class InstallerModelCreate extends JModel
                 /** rename files, if needed **/
                 if (strtolower($file) == $this->_replacesingle.'.'.$fileExtension) {
                     $this->_renameFile ($existingName=$this->_replacesingle.'.'.$fileExtension, $newName=$this->_single.'.'.$fileExtension, $folder);
+                    $this->_changeWords ($folder.'/'.$newName);
 
                 } else if (strtolower($file) == $this->_replaceplural.'.'.$fileExtension) {
                     $this->_renameFile ($existingName=$this->_replaceplural.'.'.$fileExtension, $newName=$this->_plural.'.'.$fileExtension, $folder);
+                    $this->_changeWords ($folder.'/'.$newName);
 
                 } else if ($fileExtension == 'ini') {
                     if ($file == substr($file, 0, 10).$this->_replaceplural.'.ini') {
                         $this->_renameFile ($existingName=substr($file, 0, 10).$this->_replaceplural.'.ini', $newName = substr($file, 0, 10).$this->_plural.'.ini', $folder);
+                        $this->_changeWords ($folder.'/'.$newName);
                     }
                     if ($file == substr($file, 0, 10).$this->_replaceplural.'.sys.ini') {
                         $this->_renameFile ($existingName=substr($file, 0, 10).$this->_replaceplural.'.sys.ini', $newName = substr($file, 0, 10).$this->_plural.'.sys.ini', $folder);
+                        $this->_changeWords ($folder.'/'.$newName);
                     }
+                } else {
+                    $this->_changeWords ($folder.'/'.$file);
                 }
             }
         }
@@ -362,9 +368,6 @@ class InstallerModelCreate extends JModel
             JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_RENAME_FILE_FAILED').' '.$path.'/'.$existingName, 'error');
             return false;
         }
-
-        /** change words in file, as needed **/
-        $this->_changeWords ($path.'/'.$newName);
 
         return true;
     }

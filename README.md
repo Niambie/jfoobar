@@ -9,11 +9,13 @@ This README contains:
 
 ### III. Customize Your Component
 
-### IV. Learning more about developing Joomla Components
+### IV. Create an Installable Component
 
-### V. Fork it and make it better!
+### V. Learning more about developing Joomla Components
 
-### VI. Translate with Open Translators
+### VI. Fork it and make it better!
+
+### VII. Translate with Open Translators
 
 
 ## I. Before you get started....
@@ -158,6 +160,29 @@ https://github.com/Niambie/com_jfoobar/blob/master/components/com_jfoobar/views/
 - administrator/components/com_jfoobar/views/foobar/tmpl/edit.php file.
 
 More from the Wiki (although it's a bit dated) http://docs.joomla.org/How_to_create_a_custom_button
+
+
+## IV. Create an Installable Component
+
+Create an Installable File so that you can share your Component with others is simple.
+
+### 1. Create a Folder with the plural name of your Component, ex "cats."
+
+### 2. Create the following Subfolders in the folder:
+
+#### a. administrator
+#### b. site
+#### c. media
+
+### 3. Copy the administrator/components/com_componentname/*.* files into the administrator subfolder.
+
+### 4. Copy the components/com_componentname/*.* files into the site subfolder.
+
+### 5. Copy the media/com_componentname/*.* files into the media subfolder.
+
+### 6. Move the administrator/cats.xml file into the root (on the same level as the three subfolders.)
+
+### 7. Zip the folder and share it.
 
 
 ## IV. Learning more about developing Joomla Components
