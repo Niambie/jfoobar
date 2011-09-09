@@ -171,7 +171,7 @@ b. site
 
 c. media
 
-### 3. Copy the following files into the following subfolders:
+### 3. Copy (move) the following files into the following subfolders:
 
 Copy the files in the administrator/components/com_componentname folder into the administrator subfolder.
 
@@ -179,48 +179,53 @@ Copy the files in the components/com_componentname folder into the site subfolde
 
 Copy the files in the media/com_componentname files into the media subfolder.
 
+Move the administrator/componentname.xml file into the root (the same level as the three subfolders.)
+
 Note: Do not copy the component folder name, itself, just copy the files and folders inside of the named folder.
 
 When you are done, your folder structure will look like this:
 
+
 ####administrator
 
-#####controllers
-#####helpers
-#####language
-#####models
-#####sql
-#####tables
-#####views
-#####access.xml
-#####config.xml
-#####controller.php
-#####index.html
-#####jfoobars.php
-#####jfoobars.xml
+#####...controllers
+#####...helpers
+#####...language
+#####...models
+#####...sql
+#####...tables
+#####...views
+#####...access.xml
+#####...config.xml
+#####...controller.php
+#####...index.html
+#####...jfoobars.php
+#####...jfoobars.xml
+
 
 ####media
 
-#####css
-#####images
-#####js
-#####index.html
+#####...css
+#####...images
+#####...js
+#####...index.html
+
 
 ####site
 
-#####controllers
-#####helpers
-#####language
-#####models
-#####views
-#####controller.php
-#####index.html
-#####jfoobars.php
-#####router.php
+#####...controllers
+#####...helpers
+#####...language
+#####...models
+#####...views
+#####...controller.php
+#####...index.html
+#####...jfoobars.php
+#####...router.php
 
-### 4. Move the componentname.xml file to the root folder.
 
-Move the administrator/componentname.xml file into the root (the same level as the three subfolders.)
+####componentname.xml
+
 
 ### 5. Zip the folder and install it like any other Joomla Component.
 
