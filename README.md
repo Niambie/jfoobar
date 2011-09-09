@@ -1,5 +1,6 @@
 Translated at http://OpenTranslators.org ~*~ Consider getting involved!
 
+WARNING: Use the ZIP file. Joomla does not copy the language files using the tar.gz file.
 
 This README contains:
 
@@ -11,7 +12,7 @@ This README contains:
 
 ### IV. Create an Installable Component
 
-### V. Learning more about developing Joomla Components
+### V. Learn more about developing Joomla Components
 
 ### VI. Fork it and make it better!
 
@@ -161,9 +162,9 @@ More from the Wiki (although it's a bit dated) http://docs.joomla.org/How_to_cre
 
 Create an Installable File so that you can share your Component with others is simple.
 
-### 1. Create a Folder with the plural name of your Component, ex "cats."
+**1**. Create a Folder with the plural name of your Component, ex "cats."
 
-### 2. Create the following Subfolders in the folder:
+**2**. Create the following Subfolders in the folder:
 
 a. administrator
 
@@ -171,7 +172,7 @@ b. site
 
 c. media
 
-### 3. Copy (move) the following files into the following subfolders:
+**3**. Copy (move) the following files into the following subfolders:
 
 Copy the files in the administrator/components/com_componentname folder into the administrator subfolder.
 
@@ -184,7 +185,6 @@ Move the administrator/componentname.xml file into the root (the same level as t
 Note: Do not copy the component folder name, itself, just copy the files and folders inside of the named folder.
 
 When you are done, your folder structure will look like this:
-
 
 ####administrator
 
@@ -227,10 +227,10 @@ When you are done, your folder structure will look like this:
 ####componentname.xml
 
 
-### 5. Zip the folder and install it like any other Joomla Component.
+**4**. Zip the folder and install it like any other Joomla Component.
 
 
-## IV. Learning more about developing Joomla Components
+## IV. Learn more about developing Joomla Components
 
 There is so much more that you can do, including adding and removing Views and Layouts. com_jfoobar is a good 'getting started' approach to learning how to create your own Components.
 
@@ -244,11 +244,11 @@ Component Updates http://docs.joomla.org/Managing_Component_Updates_with_Joomla!
 
 ## V. Fork it and make it better!
 
-**a**. Report issues here => https://github.com/Niambie/com_jfoobar/issues
+**1**. Report issues here => https://github.com/Niambie/com_jfoobar/issues
 
-**b**. Fork it and issue a pull request. Pass on your improvements to others. :)
+**2**. Fork it and issue a pull request. Pass on your improvements to others. :)
 
-**c**. Have fun!
+**3**. Have fun!
 
 
 ## VI. Translate with Open Translators
