@@ -23,7 +23,7 @@ class JfoobarsViewJfoobar extends JView
 	{
 		$app	= JFactory::getApplication();
 		$user	= JFactory::getUser();
-		$item		= $this->get('Item');
+		$item	= $this->get('Item');
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) {

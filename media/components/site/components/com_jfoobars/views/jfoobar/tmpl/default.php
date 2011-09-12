@@ -48,6 +48,6 @@ $custom_fields = json_decode($this->item->custom_fields);
         <img src="<?php echo $custom_fields->image1; ?>">
     </span>
 
-    <?php echo $this->item->fulltext; ?>
+    <?php echo $this->item->text; ?>
 
 </div>
