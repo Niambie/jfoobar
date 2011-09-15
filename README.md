@@ -249,7 +249,7 @@ Component Updates http://docs.joomla.org/Managing_Component_Updates_with_Joomla!
 
 ## V. Fork it and make it better!
 
-**1**. Report issues here => https://github.com/Niambie/com_jfoobar/issues
+**1**. Report issues here => https://github.com/Niambie/jfoobar/issues
 
 **2**. Fork it and issue a pull request. Pass on your improvements to others. :)
 
