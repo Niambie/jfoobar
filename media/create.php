@@ -113,7 +113,7 @@ class InstallerModelCreate extends JModel
     protected function _createComponent()
     {
         /** file, class and method **/
-        $classFolder = dirname(__FILE__).'/';
+        $classFolder = dirname(__FILE__).'/component/';
 
         $filename = JFile::makeSafe(JRequest::getCmd('source', 'jfoobars'));
         $filename = JFilterOutput::stringURLSafe($filename);
