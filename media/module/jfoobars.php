@@ -8,13 +8,13 @@
 defined('MOLAJO') or die;
 
 /**
- * Component Create Model
+ * Module Create Model
  *
  * @package	Molajo
  * @subpackage	com_jfoobar
  * @since	1.6
  */
-class InstallerModelCreateJfoobarsComponent extends InstallerModelCreate
+class InstallerModelCreateJfoobarsModule extends InstallerModelCreate
 {
 
     /**
@@ -69,7 +69,7 @@ class InstallerModelCreateJfoobarsComponent extends InstallerModelCreate
             return false;
         }
 
-        return 'com_'.$this->_plural;
+        return 'mod_'.$this->_singular;
     }
 
     /**
@@ -106,22 +106,14 @@ class InstallerModelCreateJfoobarsComponent extends InstallerModelCreate
         }
 
         /** does the destination exist? **/
-        if (JFolder::exists(JPATH_ADMINISTRATOR.'/components/'.'com_'.$this->_plural)) {
-            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_EXTENSION_ADMIN_DESTINATION_FOLDER_ALREADY_EXISTS').' '.(JPATH_ADMINISTRATOR.'/components/'.'com_'.$this->_plural), 'error');
-            return false;
-        }
-        if (JFolder::exists(JPATH_SITE.'/components/'.'com_'.$this->_plural)) {
+        if (JFolder::exists(JPATH_SITE.'/modules/'.'mod_'.$this->_singular)) {
             JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_EXTENSION_SITE_DESTINATION_FOLDER_ALREADY_EXISTS').' '.(JFolder::exists(JPATH_SITE.'/components/'.'com_'.$this->_plural)), 'error');
-            return false;
-        }
-        if (JFolder::exists(JPATH_SITE.'/media/'.'com_'.$this->_plural)) {
-            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_EXTENSION_MEDIA_DESTINATION_FOLDER_ALREADY_EXISTS').' '.(JFolder::exists(JPATH_SITE.'/media/'.'com_'.$this->_plural)), 'error');
             return false;
         }
 
         /** is it already installed? **/
         $db = $this->getDbo();
-        $query = 'SELECT extension_id FROM #__extensions where state = -1  AND element = "'.'com_'.$this->_plural.'"';
+        $query = 'SELECT extension_id FROM #__extensions where state = -1  AND element = "'.'mod_'.$this->_singular.'"';
         $db->setQuery($query);
 
         $discoveredExtensionID = $db->loadResult();
@@ -130,7 +122,7 @@ class InstallerModelCreateJfoobarsComponent extends InstallerModelCreate
             return false;
         }
 
-        /** is the component name available for installation? **/
+        /** is the module name available for installation? **/
         return true;
     }
 
@@ -149,35 +141,13 @@ class InstallerModelCreateJfoobarsComponent extends InstallerModelCreate
         JClientHelper::setCredentialsFromRequest('ftp');
 
         /**                 **/
-        /** ADMINISTRATOR   **/
+        /** mod_jfoobar     **/
         /**                 **/
-        $source = dirname(__FILE__).'/administrator/components/com_'.$this->_replaceplural;
-        $destination = JPATH_ADMINISTRATOR.'/components/'.'com_'.$this->_plural;
+        $source = dirname(__FILE__).'/mod_'.$this->_replacesingle;
+        $destination = JPATH_SITE.'/module/'.'mod_'.$this->_singular;
         $results = $this->_copySource ($source, $destination);
         if ($results === false) {
             JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_COPY_ADMIN_FOLDER_FAILED').$source, 'error');
-            return false;
-        }
-
-        /**                 **/
-        /** MEDIA           **/
-        /**                 **/
-        $source = dirname(__FILE__).'/media/com_'.$this->_replaceplural;
-        $destination = JPATH_SITE.'/media/'.'com_'.$this->_plural;
-        $results = $this->_copySource ($source, $destination);
-        if ($results === false) {
-            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_COPY_MEDIA_FOLDER_FAILED').$source, 'error');
-            return false;
-        }
-
-        /**                 **/
-        /** FRONTEND        **/
-        /**                 **/
-        $source = dirname(__FILE__).'/site/components/com_'.$this->_replaceplural;
-        $destination = JPATH_SITE.'/components/'.'com_'.$this->_plural;
-        $results = $this->_copySource ($source, $destination);
-        if ($results === false) {
-            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_COPY_SITE_FOLDER_FAILED').$source, 'error');
             return false;
         }
 

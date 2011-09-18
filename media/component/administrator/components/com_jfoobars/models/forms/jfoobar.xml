@@ -287,57 +287,6 @@
                 size="30"
                 />
 
-           <field
-               name="first_name"
-               type="text"
-               label="COM_JFOOBARS_FIELD_FIRST_NAME_LABEL"
-               description="COM_JFOOBARS_FIELD_FIRST_NAME_DESC"
-               class="inputbox"
-               size="30"
-               required="true"
-               />
-
-           <field
-               name="last_name"
-               type="text"
-               label="COM_JFOOBARS_FIELD_LAST_NAME_LABEL"
-               description="COM_JFOOBARS_FIELD_LAST_NAME_DESC"
-               class="inputbox"
-               size="30"
-               required="true"
-               />
-
-           <field
-               name="phone"
-               type="tel"
-               label="COM_JFOOBARS_FIELD_PHONE_LABEL"
-               description="COM_JFOOBARS_FIELD_PHONE_DESC"
-               class="inputbox"
-               size="15"
-               required="true"
-               />
-
-           <field
-               name="email"
-               type="email"
-               label="COM_JFOOBARS_FIELD_EMAIL_LABEL"
-               description="COM_JFOOBARS_FIELD_EMAIL_DESC"
-               class="inputbox"
-               size="30"
-               required="true"
-               />
-
-           <field
-               name="profile"
-               label="COM_JFOOBARS_FIELD_PROFILE_LABEL"
-               description="COM_JFOOBARS_FIELD_PROFILE_DESC"
-               class="inputbox"
-               type="textarea"
-               rows="3"
-               cols="30"
-               required="true"
-               />
-
 		    <field
 			    name="link_label"
 			    type="spacer"

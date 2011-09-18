@@ -82,7 +82,9 @@ class InstallerModelCreate extends JModel
 
         /** component */
         if ($this->getState('create.createtype') == 'component') {
+            $this->_createModule();
             return $this->_createComponent();
+
 
         } else if ($this->getState('create.createtype') == 'module') {
             return $this->_createModule();
@@ -117,7 +119,7 @@ class InstallerModelCreate extends JModel
 
         $filename = JFile::makeSafe(JRequest::getCmd('source', 'jfoobars'));
         $filename = JFilterOutput::stringURLSafe($filename);
-        $extensionClassname = 'InstallerModelCreate'.ucfirst($filename);
+        $extensionClassname = 'InstallerModelCreate'.ucfirst($filename).'Component';
         $filename = $filename.'.php';
 
         /** register create class **/
@@ -147,7 +149,43 @@ class InstallerModelCreate extends JModel
 
         return true;
     }
-    protected function _createModule() {}
+    protected function _createModule()
+    {
+        /** file, class and method **/
+        $classFolder = dirname(__FILE__).'/module/';
+
+        $filename = JFile::makeSafe(JRequest::getCmd('source', 'jfoobars'));
+        $filename = JFilterOutput::stringURLSafe($filename);
+        $extensionClassname = 'InstallerModelCreate'.ucfirst($filename).'Module';
+        $filename = $filename.'.php';
+
+        /** register create class **/
+        $filehelper = new MolajoFileHelper();
+        $results = $filehelper->requireClassFile ($classFolder.$filename, $extensionClassname);
+        if ($results === false) {
+           JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_INSTALL_EXTENSION_FAILED').': '. $extensionClassname, 'error');
+            return false;
+        }
+
+        /** create extension **/
+        $extensionCreator = new $extensionClassname ();
+        $extension = $extensionCreator->create();
+        if ($extension) {
+        } else {
+            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_INSTALL_EXTENSION_FAILED').': '. $this->getState('create.createtype'), 'error');
+            return false;
+        }
+
+        /** install extension **/
+        $results = $this->_installExtension(strtolower($extension));
+        if ($results) {
+        } else {
+            JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_INSTALL_EXTENSION_FAILED').': '. $this->getState('create.createtype'), 'error');
+            return false;
+        }
+
+        return true;
+    }
 
     protected function _createPlugin() {}
 
