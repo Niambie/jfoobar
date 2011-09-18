@@ -247,7 +247,7 @@ https://github.com/eddieajau/artof-google-mini/blob/master/build/build.xml
 
 ## V. Fork it and make it better!
 
-**1**. Report issues here => https://github.com/Niambie/com_jfoobar/issues
+**1**. Report issues here => https://github.com/Niambie/jfoobar/issues
 
 **2**. Fork it and issue a pull request. Pass on your improvements to others. :)
 

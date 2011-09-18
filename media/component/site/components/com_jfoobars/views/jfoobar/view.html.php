@@ -41,6 +41,9 @@ class JfoobarsViewJfoobar extends JView
         $item->slug = $item->alias ? $item->alias : $item->id;
         $item->parent_slug = $item->category_alias ? $item->category_alias : $item->catid;
 
+        // Set the text object for use in content plugins
+        $item->text = $item->fulltext;
+
         $item->event = new stdClass();
         $dispatcher = JDispatcher::getInstance();
 
