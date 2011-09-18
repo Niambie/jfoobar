@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS `#__jfoobars` (
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Checked out Date and Time',
   `checked_out` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Checked out by User ID',
   `state` tinyint(3) NOT NULL DEFAULT '0' COMMENT 'State: 2-Archived 1-Published, 0-Unpublished, -1-Trashed',
+  `featured` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'Set if article is featured.',
   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Publish Begin Date and Time',
   `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'  COMMENT 'Publish Down Date and Time',
   `access` int(10) unsigned NOT NULL DEFAULT '0'  COMMENT 'Access Control View Access Group',

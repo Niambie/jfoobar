@@ -8,7 +8,7 @@
 defined('MOLAJO') or die;
 
 /**
- * Extension Manager Create Model
+ * Component Create Model
  *
  * @package	Molajo
  * @subpackage	com_jfoobar
@@ -151,7 +151,7 @@ class InstallerModelCreateJfoobars extends InstallerModelCreate
         /**                 **/
         /** ADMINISTRATOR   **/
         /**                 **/
-        $source = dirname(__FILE__).'/administrator/components/com_'.$this->_replaceplural;
+        $source = dirname(__FILE__).'/component/administrator/components/com_'.$this->_replaceplural;
         $destination = JPATH_ADMINISTRATOR.'/components/'.'com_'.$this->_plural;
         $results = $this->_copySource ($source, $destination);
         if ($results === false) {
@@ -162,7 +162,7 @@ class InstallerModelCreateJfoobars extends InstallerModelCreate
         /**                 **/
         /** MEDIA           **/
         /**                 **/
-        $source = dirname(__FILE__).'/media/com_'.$this->_replaceplural;
+        $source = dirname(__FILE__).'/component/media/com_'.$this->_replaceplural;
         $destination = JPATH_SITE.'/media/'.'com_'.$this->_plural;
         $results = $this->_copySource ($source, $destination);
         if ($results === false) {
@@ -173,7 +173,7 @@ class InstallerModelCreateJfoobars extends InstallerModelCreate
         /**                 **/
         /** FRONTEND        **/
         /**                 **/
-        $source = dirname(__FILE__).'/site/components/com_'.$this->_replaceplural;
+        $source = dirname(__FILE__).'/component/site/components/com_'.$this->_replaceplural;
         $destination = JPATH_SITE.'/components/'.'com_'.$this->_plural;
         $results = $this->_copySource ($source, $destination);
         if ($results === false) {

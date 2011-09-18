@@ -5,8 +5,8 @@
            name="id"
            type="text"
            class="readonly"
-           label="JGLOBAL_FIELD_ID_LABEL"
-           description ="JGLOBAL_FIELD_ID_DESC"
+           label="COM_JFOOBARS_FIELD_ID_LABEL"
+           description ="COM_JFOOBARS_FIELD_ID_DESC"
            size="10"
            default="0"
            readonly="true"
@@ -15,24 +15,24 @@
        <field
            name="title"
            type="text"
-           label="JGLOBAL_TITLE"
-           description="JFIELD_TITLE_DESC"
+           label="COM_JFOOBARS_FIELD_TITLE_LABEL"
+           description="COM_JFOOBARS_FIELD_TITLE_DESC"
            class="inputbox"
            size="30" />
 
        <field
            name="alias"
            type="text"
-           label="JFIELD_ALIAS_LABEL"
-           description="JFIELD_ALIAS_DESC"
+           label="COM_JFOOBARS_FIELD_ALIAS_LABEL"
+           description="COM_JFOOBARS_FIELD_ALIAS_DESC"
            class="inputbox"
            size="30" />
 
        <field
            name="subtitle"
            type="text"
-           label="COM_CONTACTS_FIELD_SUBTITLE_LABEL"
-           description="COM_CONTACTS_FIELD_SUBTITLE_DESC"
+           label="COM_JFOOBARS_FIELD_SUBTITLE_LABEL"
+           description="COM_JFOOBARS_FIELD_SUBTITLE_DESC"
            class="inputbox"
            size="30" />
 
@@ -40,8 +40,8 @@
            name="snippet"
            type="editor"
            class="inputbox"
-           label="COM_CONTACTS_FIELD_SNIPPET_LABEL"
-           description="COM_CONTACTS_FIELD_SNIPPET_DESC"
+           label="COM_JFOOBARS_FIELD_SNIPPET_LABEL"
+           description="COM_JFOOBARS_FIELD_SNIPPET_DESC"
            filter="ContactsHelper::filterText"
            buttons="false" />
 
@@ -49,8 +49,8 @@
            name="fulltext"
            type="editor"
            class="inputbox"
-           label="COM_CONTACTS_FIELD_CONTACTTEXT_LABEL"
-           description="COM_CONTACTS_FIELD_CONTACTTEXT_DESC"
+           label="COM_JFOOBARS_FIELD_FULLTEXT_LABEL"
+           description="COM_JFOOBARS_FIELD_FULLTEXT_DESC"
            filter="ContactsHelper::filterText"
            buttons="true" />
 
@@ -59,20 +59,20 @@
        <field
            name="rules"
            type="rules"
-           label="JFIELD_RULES_LABEL"
+           label="COM_JFOOBARS_FIELD_RULES_LABEL"
            translate_label="false"
            class="inputbox"
            filter="rules"
-           component="com_contacts"
-           section="contact"
+           component="com_jfoobar"
+           section="jfoobar"
            validate="rules"
        />
 
        <field
            name="state"
            type="list"
-           label="JSTATUS"
-           description="JFIELD_PUBLISHED_DESC"
+           label="COM_JFOOBARS_FIELD_STATE_LABEL"
+           description="COM_JFOOBARS_FIELD_STATE_DESC"
            class="inputbox"
            filter="intval"
            size="1"
@@ -88,10 +88,21 @@
                JTRASHED</option>
        </field>
 
+       <field
+           name="featured"
+           type="list"
+		   label="COM_JFOOBARS_FIELD_FEATURED_LABEL"
+		   description="COM_JFOOBARS_FIELD_FEATURED_DESC"
+		   default="0"
+		    >
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+
        <field 
            name="catid" 
            type="category" 
-           extension="com_contacts"
+           extension="com_jfoobars"
            label="JCATEGORY" 
            description="JFIELD_CATEGORY_DESC"
            class="inputbox" 
@@ -107,8 +118,8 @@
        <field 
            name="created" 
            type="calendar" 
-           label="COM_CONTACTS_FIELD_CREATED_LABEL"
-           description="COM_CONTACTS_FIELD_CREATED_DESC"
+           label="COM_JFOOBARS_FIELD_CREATED_LABEL"
+           description="COM_JFOOBARS_FIELD_CREATED_DESC"
            class="inputbox"
            size="22"
            format="%Y-%m-%d %H:%M:%S"
@@ -117,14 +128,14 @@
        <field
            name="created_by"
            type="user"
-           label="COM_CONTACTS_FIELD_CREATED_BY_LABEL"
-           description="COM_CONTACTS_FIELD_CREATED_BY_DESC" />
+           label="COM_JFOOBARS_FIELD_CREATED_BY_LABEL"
+           description="COM_JFOOBARS_FIELD_CREATED_BY_DESC" />
 
        <field
            name="created_by_alias"
            type="text"
-           label="COM_CONTACTS_FIELD_CREATED_BY_ALIAS_LABEL"
-           description="COM_CONTACTS_FIELD_CREATED_BY_ALIAS_DESC"
+           label="COM_JFOOBARS_FIELD_CREATED_BY_ALIAS_LABEL"
+           description="COM_JFOOBARS_FIELD_CREATED_BY_ALIAS_DESC"
            class="inputbox"
            size="20" />
 
@@ -132,8 +143,8 @@
            name="modified"
            type="calendar"
            class="readonly"
-           label="COM_CONTACTS_FIELD_MODIFIED_NAME"
-           description="COM_CONTACTS_FIELD_MODIFIED_DESC"
+           label="COM_JFOOBARS_FIELD_MODIFIED_NAME"
+           description="COM_JFOOBARS_FIELD_MODIFIED_DESC"
            size="22"
            readonly="true"
            format="%Y-%m-%d %H:%M:%S"
@@ -154,8 +165,8 @@
        <field
            name="publish_up"
            type="calendar"
-           label="COM_CONTACTS_FIELD_PUBLISH_UP_LABEL"
-           description="COM_CONTACTS_FIELD_PUBLISH_UP_DESC"
+           label="COM_JFOOBARS_FIELD_PUBLISH_UP_LABEL"
+           description="COM_JFOOBARS_FIELD_PUBLISH_UP_DESC"
            class="inputbox"
            format="%Y-%m-%d %H:%M:%S"
            size="22"
@@ -164,8 +175,8 @@
        <field
            name="publish_down"
            type="calendar"
-           label="COM_CONTACTS_FIELD_PUBLISH_DOWN_LABEL"
-           description="COM_CONTACTS_FIELD_PUBLISH_DOWN_DESC"
+           label="COM_JFOOBARS_FIELD_PUBLISH_DOWN_LABEL"
+           description="COM_JFOOBARS_FIELD_PUBLISH_DOWN_DESC"
            class="inputbox"
            format="%Y-%m-%d %H:%M:%S"
            size="22"
@@ -174,8 +185,8 @@
        <field
            name="ordering"
            type="text"
-           label="JFIELD_ORDERING_LABEL"
-           description="JFIELD_ORDERING_DESC"
+           label="COM_JFOOBARS_FIELD_ORDERING_LABEL"
+           description="COM_JFOOBARS_FIELD_ORDERING_DESC"
            class="inputbox"
            size="6"
            default="0" />
@@ -183,8 +194,8 @@
        <field
            name="metakey"
            type="textarea"
-           label="JFIELD_META_KEYWORDS_LABEL"
-           description="JFIELD_META_KEYWORDS_DESC"
+           label="COM_JFOOBARS_FIELD_METAKEY_LABEL"
+           description="COM_JFOOBARS_FIELD_METAKEY_DESC"
            class="inputbox"
            rows="3"
            cols="30" />
@@ -192,8 +203,8 @@
        <field
            name="metadesc"
            type="textarea"
-           label="JFIELD_META_DESCRIPTION_LABEL"
-           description="JFIELD_META_DESCRIPTION_DESC"
+           label="COM_JFOOBARS_FIELD_META_DESCRIPTION_LABEL"
+           description="COM_JFOOBARS_FIELD_META_DESCRIPTION_DESC"
            class="inputbox"
            rows="3"
            cols="30" />
@@ -201,129 +212,179 @@
        <field
            name="access"
            type="accesslevel"
-           label="JFIELD_ACCESS_LABEL"
-           description="JFIELD_ACCESS_DESC"
+           label="COM_JFOOBARS_FIELD_ACCESS_LABEL"
+           description="COM_JFOOBARS_FIELD_ACCESS_DESC"
            class="inputbox"
            size="1" />
+
    </fieldset>
 
-   <fields name="attribs">
+	<fields name="metadata">
 
-       <fieldset
-           name="jbasic"
-           label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS"
-           >
+		<field
+            name="robots"
+			type="list"
+			label="COM_JFOOBARS_FIELD_META_ROBOTS_LABEL"
+			description="COM_JFOOBARS_FIELD_META_ROBOTS_DESC"
+		    >
+			<option value="">JGLOBAL_USE_GLOBAL</option>
+			<option value="index, follow">JGLOBAL_INDEX_FOLLOW</option>
+			<option value="noindex, follow">JGLOBAL_NOINDEX_FOLLOW</option>
+			<option value="index, nofollow">JGLOBAL_INDEX_NOFOLLOW</option>
+			<option value="noindex, nofollow">JGLOBAL_NOINDEX_NOFOLLOW</option>
+		</field>
 
-       <field
-           name="response_type"
-           type="lcradio"
-           default="0"
-           translate="true"
-           class="cf-input-radio validate-radio"
-           required="true"
-           label="COM_CONTACTS_FIELD_RESPONSE_TYPE_LABEL"
-           description="COM_CONTACTS_FIELD_RESPONSE_TYPE_DESC" >
-               <option value="COM_CONTACTS_FIELD_RESPONSE_QUESTION">COM_CONTACTS_FIELD_RESPONSE_QUESTION</option>
-               <option value="COM_CONTACTS_FIELD_RESPONSE_COMMENT">COM_CONTACTS_FIELD_RESPONSE_COMMENT</option>
-       </field>
+		<field
+            name="author"
+            type="text"
+			label="COM_JFOOBARS_FIELD_META_AUTHOR_LABEL"
+            description="COM_JFOOBARS_FIELD_META_AUTHOR_DESC"
+			size="20" />
 
-       <field
-           name="first_name"
-           type="text"
-           label="COM_CONTACTS_FIELD_FIRST_NAME_LABEL"
-           description="COM_CONTACTS_FIELD_FIRST_NAME_DESC"
-           class="inputbox"
-           size="30"
-           required="true"
-           />
+		<field name="rights" type="textarea" label="JFIELD_META_RIGHTS_LABEL"
+			description="JFIELD_META_RIGHTS_DESC" required="false" filter="string"
+			cols="30" rows="2" />
 
-       <field
-           name="last_name"
-           type="text"
-           label="COM_CONTACTS_FIELD_LAST_NAME_LABEL"
-           description="COM_CONTACTS_FIELD_LAST_NAME_DESC"
-           class="inputbox"
-           size="30"
-           required="true"
-           />
+	</fields>
 
-       <field
-           name="phone"
-           type="tel"
-           label="COM_CONTACTS_FIELD_PHONE_LABEL"
-           description="COM_CONTACTS_FIELD_PHONE_DESC"
-           class="inputbox"
-           size="15"
-           required="true"
-           />
+    <fields name="custom_fields">
 
-       <field
-           name="email"
-           type="email"
-           label="COM_CONTACTS_FIELD_EMAIL_LABEL"
-           description="COM_CONTACTS_FIELD_EMAIL_DESC"
-           class="inputbox"
-           size="30"
-           required="true"
-           />
+        <fieldset
+            name="jfields"
+            label="COM_JFOOBARS_CUSTOM_FIELDS"
+            >
 
-       <field
-           name="response"
-           label="COM_CONTACTS_FIELD_RESPONSE_LABEL"
-           description="COM_CONTACTS_FIELD_RESPONSE_DESC"
-           class="inputbox"
-           type="textarea"
-           rows="3"
-           cols="30"
-           required="true"
-           />
+            <field
+			    name="imagespacer"
+                label="COM_JFOOBARS_IMAGE_LABEL"
+			    description="COM_JFOOBARS_IMAGE_DESC"
+			    type="spacer"
+			    />
 
-       <field
-             name="response_desired"
-             type="lcradio"
-             default="0"
-             translate="true"
-             class="cf-input-radio validate-radio"
-             label="COM_CONTACTS_FIELD_RESPONSE_DESIRED_LABEL"
-             description="COM_CONTACTS_FIELD_RESPONSE_DESIRED_DESC" >
-               <option value="COM_CONTACTS_FIELD_PHONE_RESPONSE_DESIRED">COM_CONTACTS_FIELD_PHONE_RESPONSE_DESIRED</option>
-               <option value="COM_CONTACTS_FIELD_EMAIL_RESPONSE_DESIRED">COM_CONTACTS_FIELD_EMAIL_RESPONSE_DESIRED</option>
-       </field>
+            <field
+                name="image1"
+                type="media"
+                hide_none="1"
+                label="COM_JFOOBARS_FIELD_IMAGE1_LABEL"
+                description="COM_JFOOBARS_FIELD_IMAGE1_DESC"
+                />
 
-       <field
-             name="contact_layout"
-             type="componentlayout"
-             label="JFIELD_ALT_LAYOUT_LABEL"
-             description="JFIELD_ALT_COMPONENT_LAYOUT_DESC"
-             extension="com_contacts"
-             view="contact"
-             useglobal="true"
-             />
+            <field
+                name="image1_caption"
+                type="text"
+                label="COM_JFOOBARS_FIELD_IMAGE1_CAPTION_LABEL"
+                description="COM_JFOOBARS_FIELD_IMAGE1_CAPTION_DESC"
+                class="inputbox"
+                size="30"
+                />
 
-       </fieldset>
-   </fields>
+            <field
+                name="image1_credit"
+                type="text"
+                label="COM_JFOOBARS_FIELD_IMAGE1_CREDIT_LABEL"
+                description="COM_JFOOBARS_FIELD_IMAGE1_CREDIT_DESC"
+                class="inputbox"
+                size="30"
+                />
 
-   <fields name="metadata">
+           <field
+               name="first_name"
+               type="text"
+               label="COM_JFOOBARS_FIELD_FIRST_NAME_LABEL"
+               description="COM_JFOOBARS_FIELD_FIRST_NAME_DESC"
+               class="inputbox"
+               size="30"
+               required="true"
+               />
 
-       <field name="robots"
-           type="list"
-           label="JFIELD_METADATA_ROBOTS_LABEL"
-           description="JFIELD_METADATA_ROBOTS_DESC"
-       >
-           <option value="">JGLOBAL_USE_GLOBAL</option>
-           <option value="index, follow">JGLOBAL_INDEX_FOLLOW</option>
-           <option value="noindex, follow">JGLOBAL_NOINDEX_FOLLOW</option>
-           <option value="index, nofollow">JGLOBAL_INDEX_NOFOLLOW</option>
-           <option value="noindex, nofollow">JGLOBAL_NOINDEX_NOFOLLOW</option>
-       </field>
+           <field
+               name="last_name"
+               type="text"
+               label="COM_JFOOBARS_FIELD_LAST_NAME_LABEL"
+               description="COM_JFOOBARS_FIELD_LAST_NAME_DESC"
+               class="inputbox"
+               size="30"
+               required="true"
+               />
 
-       <field name="author" type="text"
-           label="JAUTHOR" description="JFIELD_METADATA_AUTHOR_DESC"
-           size="20" />
+           <field
+               name="phone"
+               type="tel"
+               label="COM_JFOOBARS_FIELD_PHONE_LABEL"
+               description="COM_JFOOBARS_FIELD_PHONE_DESC"
+               class="inputbox"
+               size="15"
+               required="true"
+               />
 
-       <field name="rights" type="textarea" label="JFIELD_META_RIGHTS_LABEL"
-           description="JFIELD_META_RIGHTS_DESC" required="false" filter="string"
-           cols="30" rows="2" />
+           <field
+               name="email"
+               type="email"
+               label="COM_JFOOBARS_FIELD_EMAIL_LABEL"
+               description="COM_JFOOBARS_FIELD_EMAIL_DESC"
+               class="inputbox"
+               size="30"
+               required="true"
+               />
 
-   </fields>
+           <field
+               name="profile"
+               label="COM_JFOOBARS_FIELD_PROFILE_LABEL"
+               description="COM_JFOOBARS_FIELD_PROFILE_DESC"
+               class="inputbox"
+               type="textarea"
+               rows="3"
+               cols="30"
+               required="true"
+               />
+
+		    <field
+			    name="link_label"
+			    type="spacer"
+                label="COM_JFOOBARS_LINK_LABEL"
+			    description="COM_JFOOBARS_LINK_DESC"
+                />
+
+            <field
+                name="link1"
+                type="url"
+                label="COM_JFOOBARS_FIELD_LINK1_LABEL"
+                description="COM_JFOOBARS_FIELD_LINK1_DESC"
+                class="inputbox"
+                size="30"
+                />
+
+            <field
+                name="link1_text"
+                type="text"
+                label="COM_JFOOBARS_FIELD_LINK1_NAME_LABEL"
+                description="COM_JFOOBARS_FIELD_LINK1_NAME_DESC"
+                class="inputbox"
+                size="30"
+            />
+
+
+        </fieldset>
+	</fields>
+
+    <fields name="parameters">
+
+        <fieldset
+            name="jbasic"
+            label="COM_JFOOBARS_FIELD_PARAMETERS_LABEL"
+            >
+
+            <field
+                name="jfoobar_layout"
+                type="componentlayout"
+                label="COM_JFOOBARS_FIELD_ALT_LAYOUT_LABEL"
+                description="COM_JFOOBARS_FIELD_ALT_LAYOUT_DESC"
+                extension="com_jfoobars"
+                view="jfoobar"
+                useglobal="true"
+            />
+
+	    </fieldset>
+	</fields>
+
 </form>
