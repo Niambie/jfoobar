@@ -69,7 +69,7 @@ class InstallerModelCreateJfoobarsModule extends InstallerModelCreate
             return false;
         }
 
-        return 'mod_'.$this->_singular;
+        return 'mod_'.$this->_single;
     }
 
     /**
@@ -106,14 +106,14 @@ class InstallerModelCreateJfoobarsModule extends InstallerModelCreate
         }
 
         /** does the destination exist? **/
-        if (JFolder::exists(JPATH_SITE.'/modules/'.'mod_'.$this->_singular)) {
+        if (JFolder::exists(JPATH_SITE.'/modules/'.'mod_'.$this->_single)) {
             JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_EXTENSION_SITE_DESTINATION_FOLDER_ALREADY_EXISTS').' '.(JFolder::exists(JPATH_SITE.'/components/'.'com_'.$this->_plural)), 'error');
             return false;
         }
 
         /** is it already installed? **/
         $db = $this->getDbo();
-        $query = 'SELECT extension_id FROM #__extensions where state = -1  AND element = "'.'mod_'.$this->_singular.'"';
+        $query = 'SELECT extension_id FROM #__extensions where state = -1  AND element = "'.'mod_'.$this->_single.'"';
         $db->setQuery($query);
 
         $discoveredExtensionID = $db->loadResult();
