@@ -82,7 +82,6 @@ class InstallerModelCreate extends JModel
 
         /** component */
         if ($this->getState('create.createtype') == 'component') {
-            $this->_createModule();
             return $this->_createComponent();
 
         } else if ($this->getState('create.createtype') == 'module') {
@@ -148,6 +147,7 @@ class InstallerModelCreate extends JModel
 
         return true;
     }
+
     protected function _createModule()
     {
         /** file, class and method **/
