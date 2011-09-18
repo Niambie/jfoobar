@@ -37,7 +37,7 @@ class JfoobarsViewForm extends JView
 		$this->return_page	= $this->get('ReturnPage');
 
 		if (empty($this->item->id)) {
-			$authorised = $user->authorise('core.create', 'com_jfoobars') || (count($user->getAuthorisedCategories('com_jfoobars', 'core.create')));
+			$authorised = $user->authorise('core.create', 'com_jfoobars') || (count($user->getAuthorisedJFoobaregories('com_jfoobars', 'core.create')));
 		} else {
 			$authorised = $this->item->parameters->get('access-edit');
 		}
@@ -70,7 +70,7 @@ class JfoobarsViewForm extends JView
 
 		if ($this->parameters->get('enable_category') == 1) {
 			$catid = JRequest::getInt('catid');
-			$category = JCategories::getInstance('Jfoobars')->get($this->parameters->get('catid', 1));
+			$category = Categories::getInstance('Jfoobars')->get($this->parameters->get('catid', 1));
 			$this->category_title = $category->title;
 		}
 

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="1.7"
+	client="site"
+	method="upgrade">
+	<name>MOD_JFOOBAR_NAME</name>
+	<author>Amy Stephen</author>
+	<creationDate>September 2011</creationDate>
+	<copyright>Copyright (C) 2011 Amy Stephen. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@molajo.org</authorEmail>
+	<authorUrl>molajo.org</authorUrl>
+	<version>1.7.0</version>
+	<description>MOD_JFOOBAR_XML_DESCRIPTION</description>
+	<files>
+    	<filename module="mod_jfoobar">mod_jfoobar.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="catid"
+					type="category"
+					extension="com_jfoobars"
+					multiple="true"
+                    size="5"
+					label="MOD_JFOOBAR_FIELD_CATEGORY_LABEL"
+					description="MOD_JFOOBAR_FIELD_CATEGORY_DESC" />
+
+				<field
+					name="count"
+					type="text"
+					default="5"
+					label="MOD_JFOOBAR_FIELD_COUNT_LABEL"
+					description="MOD_JFOOBAR_FIELD_COUNT_DESC" />
+                
+                <field
+                    name="show_featured"
+                    type="list"
+                    default="0"
+                    label="MOD_JFOOBAR_FIELD_FEATURED_LABEL"
+                    description="MOD_JFOOBAR_FIELD_FEATURED_DESC">
+                    <option value="0">MOD_JFOOBAR_VALUE_SHOW_BOTH</option>
+                    <option value="1">MOD_JFOOBAR_VALUE_ONLY_SHOW_FEATURED</option>
+                    <option value="2">MOD_JFOOBAR_VALUE_HIDE_SHOW_FEATURED</option>
+                </field>
+
+                <field
+                    name="ordering"
+                    type="list"
+                    default="publish_up"
+                    label="MOD_JFOOBAR_FIELD_ORDERING_LABEL"
+                    description="MOD_JFOOBAR_FIELD_ORDERING_DESC">
+                    <option value="publish_up">MOD_JFOOBAR_PUBLISHED_DATE</option>
+                    <option value="modified_date">MOD_JFOOBAR_LAST_MODIFIED</option>
+					<option value="title">MOD_JFOOBAR_TITLE</option>
+					<option value="ordering">MOD_JFOOBAR_ORDER</option>
+				</field>
+
+				<field
+					name="direction"
+					type="list"
+					default="desc"
+					label="MOD_JFOOBAR_FIELD_ORDER_DIRECTION_LABEL"
+					description="MOD_JFOOBAR_FIELD_ORDER_DIRECTION_DESC">
+					<option value="asc">MOD_JFOOBAR_FIELD_VALUE_ASCENDING</option>
+					<option value="desc">MOD_JFOOBAR_FIELD_VALUE_DESCENDING</option>
+				</field>
+
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" 
+                    />
+                
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" 
+                    />
+                
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+                
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" 
+                    />
+                
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option value="static"></option>
+				</field>
+                
+			</fieldset>
+		</fields>
+	</config>
+</extension>

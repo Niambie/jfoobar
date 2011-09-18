@@ -229,11 +229,6 @@ When you are done, your folder structure will look like this:
 
 **4**. Zip the folder and install it like any other Joomla Component.
 
-**5**. Using Phing for Packages
-
-Andew Eddie maintains a good Phing Example for packaging your Component. This is especially helpful if you have multiple Extensions. Thanks for sharing this information, Andrew.
-
-https://github.com/eddieajau/artof-google-mini/blob/master/build/build.xml
 
 ## IV. Learn more about developing Joomla Components
 
@@ -245,6 +240,9 @@ MVC http://docs.joomla.org/Developing_a_Model-View-Controller_%28MVC%29_Componen
 
 Component Updates http://docs.joomla.org/Managing_Component_Updates_with_Joomla!1.6_-_Part_1
 
+Andew Eddie maintains a good Phing Example for packaging your Component. This is especially helpful if you have multiple Extensions. Thanks for sharing this information, Andrew.
+
+https://github.com/eddieajau/artof-google-mini/blob/master/build/build.xml
 
 
 ## V. Fork it and make it better!

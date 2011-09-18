@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+   <fieldset>
+       <field
+           name="id"
+           type="text"
+           class="readonly"
+           label="JGLOBAL_FIELD_ID_LABEL"
+           description ="JGLOBAL_FIELD_ID_DESC"
+           size="10"
+           default="0"
+           readonly="true"
+       />
+
+       <field
+           name="title"
+           type="text"
+           label="JGLOBAL_TITLE"
+           description="JFIELD_TITLE_DESC"
+           class="inputbox"
+           size="30" />
+
+       <field
+           name="alias"
+           type="text"
+           label="JFIELD_ALIAS_LABEL"
+           description="JFIELD_ALIAS_DESC"
+           class="inputbox"
+           size="30" />
+
+       <field
+           name="subtitle"
+           type="text"
+           label="COM_CONTACTS_FIELD_SUBTITLE_LABEL"
+           description="COM_CONTACTS_FIELD_SUBTITLE_DESC"
+           class="inputbox"
+           size="30" />
+
+       <field
+           name="snippet"
+           type="editor"
+           class="inputbox"
+           label="COM_CONTACTS_FIELD_SNIPPET_LABEL"
+           description="COM_CONTACTS_FIELD_SNIPPET_DESC"
+           filter="ContactsHelper::filterText"
+           buttons="false" />
+
+       <field
+           name="fulltext"
+           type="editor"
+           class="inputbox"
+           label="COM_CONTACTS_FIELD_CONTACTTEXT_LABEL"
+           description="COM_CONTACTS_FIELD_CONTACTTEXT_DESC"
+           filter="ContactsHelper::filterText"
+           buttons="true" />
+
+       <field name="asset_id" type="hidden" filter="unset" />
+
+       <field
+           name="rules"
+           type="rules"
+           label="JFIELD_RULES_LABEL"
+           translate_label="false"
+           class="inputbox"
+           filter="rules"
+           component="com_contacts"
+           section="contact"
+           validate="rules"
+       />
+
+       <field
+           name="state"
+           type="list"
+           label="JSTATUS"
+           description="JFIELD_PUBLISHED_DESC"
+           class="inputbox"
+           filter="intval"
+           size="1"
+           default="1"
+           >
+           <option value="1">
+               JPUBLISHED</option>
+           <option value="0">
+               JUNPUBLISHED</option>
+           <option value="2">
+               JARCHIVED</option>
+           <option value="-2">
+               JTRASHED</option>
+       </field>
+
+       <field 
+           name="catid" 
+           type="category" 
+           extension="com_contacts"
+           label="JCATEGORY" 
+           description="JFIELD_CATEGORY_DESC"
+           class="inputbox" 
+           required="false"
+       >
+       </field>
+       
+       <field
+           name="buttonspacer"
+           description="JGLOBAL_ACTION_PERMISSIONS_DESCRIPTION"
+           type="spacer" />
+       
+       <field 
+           name="created" 
+           type="calendar" 
+           label="COM_CONTACTS_FIELD_CREATED_LABEL"
+           description="COM_CONTACTS_FIELD_CREATED_DESC"
+           class="inputbox"
+           size="22"
+           format="%Y-%m-%d %H:%M:%S"
+           filter="user_utc" />
+
+       <field
+           name="created_by"
+           type="user"
+           label="COM_CONTACTS_FIELD_CREATED_BY_LABEL"
+           description="COM_CONTACTS_FIELD_CREATED_BY_DESC" />
+
+       <field
+           name="created_by_alias"
+           type="text"
+           label="COM_CONTACTS_FIELD_CREATED_BY_ALIAS_LABEL"
+           description="COM_CONTACTS_FIELD_CREATED_BY_ALIAS_DESC"
+           class="inputbox"
+           size="20" />
+
+       <field
+           name="modified"
+           type="calendar"
+           class="readonly"
+           label="COM_CONTACTS_FIELD_MODIFIED_NAME"
+           description="COM_CONTACTS_FIELD_MODIFIED_DESC"
+           size="22"
+           readonly="true"
+           format="%Y-%m-%d %H:%M:%S"
+           filter="user_utc" />
+
+       <field
+           name="modified_by"
+           type="user"
+           label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"
+           class="readonly"
+           readonly="true"
+           filter="unset" />
+
+       <field name="checked_out" type="hidden" filter="unset" />
+
+       <field name="checked_out_time" type="hidden" filter="unset" />
+
+       <field
+           name="publish_up"
+           type="calendar"
+           label="COM_CONTACTS_FIELD_PUBLISH_UP_LABEL"
+           description="COM_CONTACTS_FIELD_PUBLISH_UP_DESC"
+           class="inputbox"
+           format="%Y-%m-%d %H:%M:%S"
+           size="22"
+           filter="user_utc" />
+
+       <field
+           name="publish_down"
+           type="calendar"
+           label="COM_CONTACTS_FIELD_PUBLISH_DOWN_LABEL"
+           description="COM_CONTACTS_FIELD_PUBLISH_DOWN_DESC"
+           class="inputbox"
+           format="%Y-%m-%d %H:%M:%S"
+           size="22"
+           filter="user_utc" />
+
+       <field
+           name="ordering"
+           type="text"
+           label="JFIELD_ORDERING_LABEL"
+           description="JFIELD_ORDERING_DESC"
+           class="inputbox"
+           size="6"
+           default="0" />
+
+       <field
+           name="metakey"
+           type="textarea"
+           label="JFIELD_META_KEYWORDS_LABEL"
+           description="JFIELD_META_KEYWORDS_DESC"
+           class="inputbox"
+           rows="3"
+           cols="30" />
+
+       <field
+           name="metadesc"
+           type="textarea"
+           label="JFIELD_META_DESCRIPTION_LABEL"
+           description="JFIELD_META_DESCRIPTION_DESC"
+           class="inputbox"
+           rows="3"
+           cols="30" />
+
+       <field
+           name="access"
+           type="accesslevel"
+           label="JFIELD_ACCESS_LABEL"
+           description="JFIELD_ACCESS_DESC"
+           class="inputbox"
+           size="1" />
+   </fieldset>
+
+   <fields name="attribs">
+
+       <fieldset
+           name="jbasic"
+           label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS"
+           >
+
+       <field
+           name="response_type"
+           type="lcradio"
+           default="0"
+           translate="true"
+           class="cf-input-radio validate-radio"
+           required="true"
+           label="COM_CONTACTS_FIELD_RESPONSE_TYPE_LABEL"
+           description="COM_CONTACTS_FIELD_RESPONSE_TYPE_DESC" >
+               <option value="COM_CONTACTS_FIELD_RESPONSE_QUESTION">COM_CONTACTS_FIELD_RESPONSE_QUESTION</option>
+               <option value="COM_CONTACTS_FIELD_RESPONSE_COMMENT">COM_CONTACTS_FIELD_RESPONSE_COMMENT</option>
+       </field>
+
+       <field
+           name="first_name"
+           type="text"
+           label="COM_CONTACTS_FIELD_FIRST_NAME_LABEL"
+           description="COM_CONTACTS_FIELD_FIRST_NAME_DESC"
+           class="inputbox"
+           size="30"
+           required="true"
+           />
+
+       <field
+           name="last_name"
+           type="text"
+           label="COM_CONTACTS_FIELD_LAST_NAME_LABEL"
+           description="COM_CONTACTS_FIELD_LAST_NAME_DESC"
+           class="inputbox"
+           size="30"
+           required="true"
+           />
+
+       <field
+           name="phone"
+           type="tel"
+           label="COM_CONTACTS_FIELD_PHONE_LABEL"
+           description="COM_CONTACTS_FIELD_PHONE_DESC"
+           class="inputbox"
+           size="15"
+           required="true"
+           />
+
+       <field
+           name="email"
+           type="email"
+           label="COM_CONTACTS_FIELD_EMAIL_LABEL"
+           description="COM_CONTACTS_FIELD_EMAIL_DESC"
+           class="inputbox"
+           size="30"
+           required="true"
+           />
+
+       <field
+           name="response"
+           label="COM_CONTACTS_FIELD_RESPONSE_LABEL"
+           description="COM_CONTACTS_FIELD_RESPONSE_DESC"
+           class="inputbox"
+           type="textarea"
+           rows="3"
+           cols="30"
+           required="true"
+           />
+
+       <field
+             name="response_desired"
+             type="lcradio"
+             default="0"
+             translate="true"
+             class="cf-input-radio validate-radio"
+             label="COM_CONTACTS_FIELD_RESPONSE_DESIRED_LABEL"
+             description="COM_CONTACTS_FIELD_RESPONSE_DESIRED_DESC" >
+               <option value="COM_CONTACTS_FIELD_PHONE_RESPONSE_DESIRED">COM_CONTACTS_FIELD_PHONE_RESPONSE_DESIRED</option>
+               <option value="COM_CONTACTS_FIELD_EMAIL_RESPONSE_DESIRED">COM_CONTACTS_FIELD_EMAIL_RESPONSE_DESIRED</option>
+       </field>
+
+       <field
+             name="contact_layout"
+             type="componentlayout"
+             label="JFIELD_ALT_LAYOUT_LABEL"
+             description="JFIELD_ALT_COMPONENT_LAYOUT_DESC"
+             extension="com_contacts"
+             view="contact"
+             useglobal="true"
+             />
+
+       </fieldset>
+   </fields>
+
+   <fields name="metadata">
+
+       <field name="robots"
+           type="list"
+           label="JFIELD_METADATA_ROBOTS_LABEL"
+           description="JFIELD_METADATA_ROBOTS_DESC"
+       >
+           <option value="">JGLOBAL_USE_GLOBAL</option>
+           <option value="index, follow">JGLOBAL_INDEX_FOLLOW</option>
+           <option value="noindex, follow">JGLOBAL_NOINDEX_FOLLOW</option>
+           <option value="index, nofollow">JGLOBAL_INDEX_NOFOLLOW</option>
+           <option value="noindex, nofollow">JGLOBAL_NOINDEX_NOFOLLOW</option>
+       </field>
+
+       <field name="author" type="text"
+           label="JAUTHOR" description="JFIELD_METADATA_AUTHOR_DESC"
+           size="20" />
+
+       <field name="rights" type="textarea" label="JFIELD_META_RIGHTS_LABEL"
+           description="JFIELD_META_RIGHTS_DESC" required="false" filter="string"
+           cols="30" rows="2" />
+
+   </fields>
+</form>
