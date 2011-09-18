@@ -144,7 +144,7 @@ class InstallerModelCreateJfoobarsModule extends InstallerModelCreate
         /** mod_jfoobar     **/
         /**                 **/
         $source = dirname(__FILE__).'/mod_'.$this->_replacesingle;
-        $destination = JPATH_SITE.'/module/'.'mod_'.$this->_singular;
+        $destination = JPATH_SITE.'/module/'.'mod_'.$this->_single;
         $results = $this->_copySource ($source, $destination);
         if ($results === false) {
             JFactory::getApplication()->enqueueMessage(JText::_('PLG_SYSTEM_CREATE_COPY_ADMIN_FOLDER_FAILED').$source, 'error');

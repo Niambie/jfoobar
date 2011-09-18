@@ -85,7 +85,6 @@ class InstallerModelCreate extends JModel
             $this->_createModule();
             return $this->_createComponent();
 
-
         } else if ($this->getState('create.createtype') == 'module') {
             return $this->_createModule();
 
