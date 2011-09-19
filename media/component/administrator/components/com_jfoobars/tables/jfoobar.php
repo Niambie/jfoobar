@@ -200,7 +200,7 @@ class JfoobarsTableJfoobar extends JTable
         if (!property_exists($this, 'checked_out') || !property_exists($this, 'checked_out_time')) {
             // Do nothing
         } else {
-            $query->where($this->_db->quoteName('checked_out').' = 0 OR '.$this->_db->quoteName('checked_out').' = '.(int) $userId);
+            $query->where('('.$this->_db->quoteName('checked_out').' = 0 OR '.$this->_db->quoteName('checked_out').' = '.(int) $userId.')');
         }
 
         // Update the publishing state for rows with the given primary keys.
