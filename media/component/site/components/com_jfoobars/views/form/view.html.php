@@ -70,7 +70,7 @@ class JfoobarsViewForm extends JView
 
 		if ($this->parameters->get('enable_category') == 1) {
 			$catid = JRequest::getInt('catid');
-			$category = Categories::getInstance('Jfoobars')->get($this->parameters->get('catid', 1));
+			$category = JCategories::getInstance('Jfoobars')->get($this->parameters->get('catid', 1));
 			$this->category_title = $category->title;
 		}
 
