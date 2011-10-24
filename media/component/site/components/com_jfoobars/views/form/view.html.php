@@ -37,7 +37,7 @@ class JfoobarsViewForm extends JView
 		$this->return_page	= $this->get('ReturnPage');
 
 		if (empty($this->item->id)) {
-			$authorised = $user->authorise('core.create', 'com_jfoobars') || (count($user->getAuthorisedJFoobaregories('com_jfoobars', 'core.create')));
+			$authorised = $user->authorise('core.create', 'com_jfoobars') || (count($user->getAuthorisedCategories('com_jfoobars', 'core.create')));
 		} else {
 			$authorised = $this->item->parameters->get('access-edit');
 		}
@@ -61,7 +61,7 @@ class JfoobarsViewForm extends JView
 
 		// Create a shortcut to the parameters.
 		$parameters	= &$this->state->params;
- 
+
 		//Escape strings for HTML output
 		$this->pageclass_sfx = htmlspecialchars($parameters->get('pageclass_sfx'));
 
