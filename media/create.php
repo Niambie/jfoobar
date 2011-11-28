@@ -14,7 +14,7 @@ jimport('joomla.application.component.controller');
 jimport('joomla.application.component.model');
 jimport('joomla.installer.installer');
 jimport('joomla.installer.helper');
-jimport('joomla.client.helper');
+jimport('joomla.filesystem.file');
 
 /**
  * Extension Manager Create Model
