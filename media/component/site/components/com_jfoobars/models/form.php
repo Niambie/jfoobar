@@ -92,7 +92,7 @@ class JfoobarsModelForm extends JfoobarsModelJfoobar
 		else if (!empty($userId) && $user->authorise('core.edit.own', $asset)) {
 			// Check for a valid user and that they are the owner.
 			if ($userId == $value->created_by) {
-				$value->parameters->set('access-edit', true);
+				$value->params->set('access-edit', true);
 			}
 		}
 
