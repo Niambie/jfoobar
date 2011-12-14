@@ -181,7 +181,8 @@ class JfoobarsModelJfoobars extends JModelList
         }
 
         // Filter by a single or group of categories.
-        $categoryId = $this->getState('filter.category_id');
+        $categoryId = JRequest::getInt('id');        
+
         if (is_numeric($categoryId)) {
             $query->where('a.catid = '.(int) $categoryId);
 
