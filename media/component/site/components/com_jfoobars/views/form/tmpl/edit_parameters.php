@@ -7,7 +7,7 @@
  */
 defined('_JEXEC') or die;
 
-$fieldSets = $this->form->getFieldsets('parameters');
+$fieldSets = $this->form->getFieldsets('params');
 foreach ($fieldSets as $name => $fieldSet) :
     ?>
 	<fieldset>
