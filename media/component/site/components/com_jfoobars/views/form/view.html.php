@@ -39,7 +39,7 @@ class JfoobarsViewForm extends JView
 		if (empty($this->item->id)) {
 			$authorised = $user->authorise('core.create', 'com_jfoobars') || (count($user->getAuthorisedCategories('com_jfoobars', 'core.create')));
 		} else {
-			$authorised = $this->item->parameters->get('access-edit');
+			$authorised = $this->item->params->get('access-edit');
 		}
 
 		if ($authorised === true) {
