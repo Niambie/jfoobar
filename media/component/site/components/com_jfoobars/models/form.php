@@ -31,7 +31,7 @@ class JfoobarsModelForm extends JfoobarsModelJfoobar
 		$app = JFactory::getApplication();
 
 		// Load state from the request.
-		$pk = JRequest::getInt('id');
+		$pk = JRequest::getInt('a_id');
 		$this->setState('jfoobar.id', $pk);
 
 		$this->setState('jfoobar.catid', JRequest::getInt('catid'));
@@ -73,9 +73,11 @@ class JfoobarsModelForm extends JfoobarsModelJfoobar
 		$properties = $table->getProperties(1);
 		$value = JArrayHelper::toObject($properties, 'JObject');
 
+
+
 		// Convert attrib field to Registry.
-		$value->parameters = new JRegistry;
-		$value->parameters->loadString($value->parameters);
+		$value->params = new JRegistry;
+		$value->params->loadString($value->parameters);
 
 		// Compute selected asset permissions.
 		$user	= JFactory::getUser();
@@ -84,7 +86,7 @@ class JfoobarsModelForm extends JfoobarsModelJfoobar
 
 		// Check general edit permission first.
 		if ($user->authorise('core.edit', $asset)) {
-			$value->parameters->set('access-edit', true);
+			$value->params->set('access-edit', true);
 		}
 		// Now check if edit.own is available.
 		else if (!empty($userId) && $user->authorise('core.edit.own', $asset)) {
@@ -97,15 +99,15 @@ class JfoobarsModelForm extends JfoobarsModelJfoobar
 		// Check edit state permission.
 		if ($itemId) {
 			// Existing item
-			$value->parameters->set('access-change', $user->authorise('core.edit.state', $asset));
+			$value->params->set('access-change', $user->authorise('core.edit.state', $asset));
 		} else {
 			// New item.
 			$catId = (int) $this->getState('jfoobar.catid');
 			if ($catId) {
-				$value->parameters->set('access-change', $user->authorise('core.edit.state', 'com_jfoobars.category.'.$catId));
+				$value->params->set('access-change', $user->authorise('core.edit.state', 'com_jfoobars.category.'.$catId));
 			}
 			else {
-				$value->parameters->set('access-change', $user->authorise('core.edit.state', 'com_jfoobars'));
+				$value->params->set('access-change', $user->authorise('core.edit.state', 'com_jfoobars'));
 			}
 		}
 
