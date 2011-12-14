@@ -27,7 +27,7 @@ defined('_JEXEC') or die;
         </li>
     <?php endif; ?>
 
-	<?php if ($this->item->parameters->get('access-change')): ?>
+	<?php if ($this->item->params->get('access-change')): ?>
 		<div class="formelm">
             <?php echo $this->form->getLabel('state'); ?>
             <?php echo $this->form->getInput('state'); ?>
