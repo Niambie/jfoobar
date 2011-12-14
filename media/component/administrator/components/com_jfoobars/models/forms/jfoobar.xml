@@ -63,7 +63,7 @@
            translate_label="false"
            class="inputbox"
            filter="rules"
-           component="com_jfoobar"
+           component="com_jfoobars"
            section="jfoobar"
            validate="rules"
        />
