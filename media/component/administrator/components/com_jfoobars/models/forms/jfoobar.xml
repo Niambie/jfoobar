@@ -42,7 +42,7 @@
            class="inputbox"
            label="COM_JFOOBARS_FIELD_SNIPPET_LABEL"
            description="COM_JFOOBARS_FIELD_SNIPPET_DESC"
-           filter="ContactsHelper::filterText"
+           filter="JfoobarsHelper::filterText"
            buttons="false" />
 
        <field
@@ -51,7 +51,7 @@
            class="inputbox"
            label="COM_JFOOBARS_FIELD_FULLTEXT_LABEL"
            description="COM_JFOOBARS_FIELD_FULLTEXT_DESC"
-           filter="ContactsHelper::filterText"
+           filter="JfoobarsHelper::filterText"
            buttons="true" />
 
        <field name="asset_id" type="hidden" filter="unset" />
